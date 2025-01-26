@@ -1,0 +1,181 @@
+/* Container Styling */
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.details, .vulnerabilities {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.details p {
+    margin: 5px 0;
+}
+
+.severity {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.severity div {
+    text-align: center;
+    flex: 1;
+    padding: 5px;
+}
+
+.severity div span:first-child {
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.severity .critical span {
+    color: #ff0000;
+}
+
+.severity .high span {
+    color: #ff4500;
+}
+
+.severity .medium span {
+    color: #ffa500;
+}
+
+.severity .low span {
+    color: #32cd32; 
+}
+
+.severity .informational span {
+    color: #1e90ff;
+}
+
+.download-report {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.download-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+}
+
+.download-btn i {
+    margin-right: 5px;
+}
+
+.vulnerabilities-table {
+    margin-top: 20px;
+}
+
+.vulnerabilities table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.vulnerabilities th, .vulnerabilities td {
+    padding: 8px;
+    text-align: left;
+}
+
+.vulnerabilities th {
+    background-color: #23c8ce69;
+    font-weight: bold;
+    position: relative;
+}
+
+.vulnerabilities td.severity {
+    font-weight: 500;
+}
+
+.vulnerabilities td.severity.critical {
+    color: #ff0000; 
+}
+
+.vulnerabilities td.severity.high {
+    color: #fc3d3d;
+}
+
+.vulnerabilities td.severity.medium {
+    color: #ffa500;
+}
+
+.vulnerabilities td.severity.low {
+    color: #32cd32;
+}
+
+.vulnerabilities td.severity.informational {
+    color: #1e90ff;
+}
+
+
+.vulnerabilities td:last-child a {
+    color: #0065a8; 
+    text-decoration: none; 
+}
+
+.vulnerabilities td:last-child a:hover {
+    text-decoration: underline; 
+}
+
+.vulnerabilities th.sortable {
+    cursor: pointer;
+}
+
+.vulnerabilities th:not(.sortable) {
+    cursor: default;
+}
+
+@media (max-width: 768px) {
+    .severity {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .severity div {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .download-report {
+        text-align: left;
+    }
+
+    .vulnerabilities table {
+        font-size: 14px;
+    }
+
+    .vulnerabilities th, .vulnerabilities td {
+        padding: 6px;
+    }
+}

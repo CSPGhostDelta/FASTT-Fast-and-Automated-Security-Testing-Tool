@@ -1,0 +1,96 @@
+version: '3.8'
+
+services:
+  fastt:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: FASTTAPP
+    restart: always
+    networks:
+      - fasttnetwork
+    environment:
+      - SQLALCHEMY_DATABASE_URI=mysql+pymysql://fasttdatabase:fasttdb@fasttdb/fasttdb
+      - SQLALCHEMY_TRACK_MODIFICATIONS=False
+      - SECRET_KEY=mysecretkey
+      - CELERY_BROKER_URL=redis://fasttredis:6379/0
+      - CELERY_RESULT_BACKEND=redis://fasttredis:6379/0
+      - FLASK_ENV=production
+    volumes:
+      - .:/usr/src/app
+      - ./reports:/usr/src/app/reports
+    command: web  # This will run the web application
+    expose:
+      - "5000"
+    depends_on:
+      - fasttdb
+      - fasttredis
+
+  celery_worker:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: FASTTCELERY
+    restart: always
+    networks:
+      - fasttnetwork
+    environment:
+      - CELERY_BROKER_URL=redis://fasttredis:6379/0
+      - CELERY_RESULT_BACKEND=redis://fasttredis:6379/0
+      - FLASK_ENV=production
+    volumes:
+      - .:/usr/src/app
+      - ./reports:/usr/src/app/reports
+    command: celery 
+    depends_on:
+      - fastt
+      - fasttredis
+
+  fasttserver:
+    image: nginx:latest
+    container_name: FASTTSERVER
+    restart: always
+    networks:
+      - fasttnetwork
+    ports:
+      - "8080:80" 
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./certs:/etc/nginx/certs 
+      - ./static:/usr/src/app/static
+    depends_on:
+      - fastt 
+
+  fasttdb:
+    image: mysql:latest
+    container_name: FASTTDB
+    restart: always
+    networks:
+      - fasttnetwork
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: fasttdb 
+      MYSQL_USER: fasttdatabase
+      MYSQL_PASSWORD: fasttdb
+    ports:
+      - "3306:3306" 
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+
+  fasttredis:
+    image: redis:latest
+    container_name: FASTTREDIS
+    restart: always 
+    networks:
+      - fasttnetwork
+    ports:
+      - "6379:6379"
+
+networks:
+  fasttnetwork:
+    driver: bridge
+
+volumes:
+  mysql_data:

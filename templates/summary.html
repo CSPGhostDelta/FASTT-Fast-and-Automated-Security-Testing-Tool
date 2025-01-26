@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Summary</title>
+    <link rel="stylesheet" href="/static/styles/summary.css">
+    <link rel="stylesheet" href="/static/styles/notification.css">
+    <link rel="stylesheet" href="/static/styles/body.css">
+    {% include 'fonts.html' %}
+    {% include 'header.html' %}
+</head>
+<body>
+    <div class="container">
+        <h2>Scan Summary</h2>
+
+        <div class="summary-section">
+            <div class="summary-item">
+                <span class="icon">🎯</span>
+                <p>Total Targets</p>
+                <h3>{{ total_targets }}</h3>
+            </div>
+            <div class="summary-item">
+                <span class="icon">🔍</span>
+                <p>Total Scans</p>
+                <h3>{{ total_scans }}</h3>
+            </div>
+            <div class="summary-item">
+                <span class="icon">🐞</span>
+                <p>Total Vulnerabilities</p>
+                <h3>{{ total_vulnerabilities }}</h3>
+            </div>
+            <div class="summary-item">
+                <span class="icon">⏲️</span>
+                <p>Total Scan Time Elapsed</p>
+                <h3>{{ total_scan_time }}</h3>
+            </div>
+        </div>
+
+        <div class="vulnerabilities-section">
+            <div class="vulnerabilities-severity">
+                <h3>Total Vulnerabilities by Severity</h3><hr>
+                <div class="severity">
+                    <div class="severity-item critical">{{ severity_counts.Critical }}<br>Critical</div>
+                    <div class="severity-item high">{{ severity_counts.High }}<br>High</div>
+                    <div class="severity-item medium">{{ severity_counts.Medium }}<br>Medium</div>
+                    <div class="severity-item low">{{ severity_counts.Low }}<br>Low</div>
+                    <div class="severity-item informational">{{ severity_counts.Informational }}<br>Informational</div>
+                </div>
+            </div>
+
+            <div class="vulnerabilities-found">
+                <h3>Most Vulnerabilities Found</h3>
+                <hr>
+                <table>
+                    <tr>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Total</th>
+                    </tr>
+                    {% if most_vulnerabilities %}
+                        {% for vuln_type, count in most_vulnerabilities %}
+                        <tr>
+                            <td>{{ loop.index }}.</td>
+                            <td>{{ vuln_type }}</td>
+                            <td>{{ count }}</td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="3" class="empty-message">No vulnerabilities found</td>
+                        </tr>
+                    {% endif %}
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

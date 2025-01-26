@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Targets</title>
+    <link rel="stylesheet" href="/static/styles/notification.css">
+    <link rel="stylesheet" href="/static/styles/body.css">
+    <link rel="stylesheet" href="/static/styles/history.css">
+    {% include 'fonts.html' %}
+    {% include 'header.html' %}
+    {% include 'notification.html' %}
+</head>
+<body>
+    <div class="container">
+        <h1>Scan History</h1>
+        <hr>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Target Domain</th>
+                        <th>Target Added</th>
+                        <th>Scan Start</th>
+                        <th>Scan End</th>
+                        <th>Scan Time Elapsed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if targets %}
+                        {% for target in targets %}
+                            <tr>
+                                <td data-label="No.">{{ loop.index }}</td>
+                                <td data-label="Name">{{ target.name }}</td>
+                                <td data-label="Target Domain">{{ target.domain }}</td>
+                                <td data-label="Target Date">{{ target.target_date }}</td>
+                                <td data-label="Scan Start">{{ target.scan_start }}</td>
+                                <td data-label="Scan End">{{ target.scan_end }}</td>
+                                <td data-label="Scan Time Elapsed">{{ target.scan_time_elapsed }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="7" class="empty-message">No scan history available.</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
