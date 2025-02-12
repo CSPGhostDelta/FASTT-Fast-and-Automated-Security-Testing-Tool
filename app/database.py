@@ -6,7 +6,7 @@ import uuid
 db = SQLAlchemy()
 
 def dockerdb():
-    return "mysql+pymysql://root:fasttdb@FASTTDB:3306/fasttdb"
+    return "mysql+pymysql://fasttdatabase:fasttdb@FASTTDB:3306/fasttdb"
 
 engine = create_engine(dockerdb())
 
@@ -47,7 +47,7 @@ class Vulnerability(db.Model):
     scan_name = db.Column(db.String(255), nullable=False)
     full_description = db.Column(db.Text, nullable=True)
     remediation = db.Column(db.Text, nullable=True)
-    cwe_code = db.Column(db.String(50), nullable=True) 
+    cwe_code = db.Column(db.String(255), nullable=True) 
     cve_code = db.Column(db.String(50), nullable=True)
     cvss_metrics = db.Column(db.String(255), nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)

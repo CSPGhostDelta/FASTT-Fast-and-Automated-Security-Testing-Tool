@@ -80,7 +80,6 @@ def validate_scan_template(template_module):
     if method not in ['parameter', 'path']:
         raise ValueError(f"Invalid entry_point_method: {method}")
 
-    
     if method == 'parameter' and 'paths' not in entry_point:
         raise ValueError("Missing 'paths' for parameter method")
     
@@ -91,11 +90,11 @@ def validate_scan_template(template_module):
         raise ValueError("Missing 'payloads' section in SCAN_TEMPLATE")
     
     payloads = template['payloads']
-    if 'payload_type' not in payloads or 'payload' not in payloads:
-        raise ValueError("Missing 'payload_type' or 'payload' in payloads section")
+    if 'payload_type' not in payloads:
+        raise ValueError("Missing 'payload_type' in payloads section")
     
-    if payloads['payload_type'] not in ['single', 'wordlist']:
-        raise ValueError("Invalid payload_type. Must be 'single' or 'wordlist'")
+    if payloads['payload_type'] not in ['single', 'wordlist', 'none']:
+        raise ValueError("Invalid payload_type. Must be 'single', 'wordlist', or 'none'")
 
     if payloads['payload_type'] == 'wordlist' and not isinstance(payloads['payload'], list):
         raise ValueError("For 'wordlist' payload_type, 'payload' must be a list")
@@ -122,31 +121,37 @@ def add_vulnerability(scan_info, endpoint, target):
     try:
         from uuid import uuid4
         unique_id = str(uuid4())
+        matched_words = scan_info.get("matched_words", [])
+        if isinstance(matched_words, list):
+            detected_value = ', '.join(matched_words)
+        else:
+            detected_value = str(matched_words)
+
+        details = scan_info.get('description', 'N/A').replace("{detected_value}", detected_value)
 
         vulnerability = Vulnerability(
             id=unique_id,
             name=scan_info['name'],
             vulnerability_type=scan_info['type'],
-            details=scan_info.get('description', 'N/A'),
+            details=details,
             severity=scan_info['severity'],
             cvss_score=scan_info.get('cvss_score', 'N/A'),
             cvss_metrics=scan_info.get('cvss_metrics', 'N/A'),
             endpoint=endpoint,
             scan_name=target.name,
             full_description=scan_info.get('full_description', 'N/A'),
-            remediation=scan_info.get('remediation', 'N/A'),
-            cwe_code=scan_info.get('cwe_code', 'N/A'),
-            cve_code=scan_info.get('cve_code', 'N/A')
+            remediation=scan_info.get('remediation', 'N/A')
         )
-        
         db.session.add(vulnerability)
         db.session.commit()
+        logger.info(f"Added vulnerability: {vulnerability.name} for {endpoint}")
         return vulnerability
-
     except Exception as e:
-        db.session.rollback()
         logger.error(f"Error adding vulnerability: {e}")
+        db.session.rollback()
         return None
+
+
 
 def requests_retry_session(
     retries=3,
@@ -166,7 +171,7 @@ def requests_retry_session(
     session.mount('https://', adapter)
     return session
 
-def crawl_website(domain, target_name, report_dir, depth=3, max_urls=500):
+def crawl_website(domain, target_name, report_dir, depth=3, max_urls=100):
     visited = set()
     to_crawl = [(domain, 0)]
     discovered_resources = {
@@ -269,9 +274,6 @@ def crawl_website(domain, target_name, report_dir, depth=3, max_urls=500):
                 f.write(f"{url}, \n")
             f.write("\n")
     
-
-
-    
     logger.info(f"Discovered {len(discovered_resources['parameters'])} unique parameters")
     
     return list(discovered_resources['urls']), {
@@ -306,6 +308,7 @@ def perform_scan(domain, template_module, target, total_templates, current_templ
     matcher = template_module.SCAN_TEMPLATE.get('matcher', {})
     matcher_type = matcher.get('matcher_type', '')
     matcher_words = matcher.get('words', [])
+    matcher_regex = matcher.get('regex', None)
     max_scan = template_module.SCAN_TEMPLATE.get('max_scan', 5)
 
     payloads = []
@@ -335,75 +338,91 @@ def perform_scan(domain, template_module, target, total_templates, current_templ
     logger.info(f"Scanning {scan_info['name']} (Total payloads: {len(payloads)})")
     vulnerabilities_found = False
 
-    def check_vulnerability(endpoint, extra_details=None, headers=None, template=None):
+    def check_vulnerability(endpoint, extra_details=None):
         try:
-            response = session.get(endpoint, timeout=10, headers=headers)
-            
+            response = session.get(endpoint, timeout=10)
+
             if response.status_code != 200:
-                logger.info(f"Skipping {endpoint} due to non-200 status code: {response.status_code}")
                 return False
-            
-            response_headers = {k: v for k, v in response.headers.items()}
-            response_body = response.text
-            matched_words = []
-            matched_regex = []
 
-            logger.info(f"Response Headers: {response_headers}")
-
-            matcher = template['matcher']
-            matcher_type = matcher.get('matcher_type', '')
-            matcher_words = matcher.get('words', [])
-            matcher_regex = matcher.get('regex', None)
-
-            def check_matches(content, words, regex):
-                matches = []
-                for word in words:
-                    if word.lower() in content.lower():
-                        matches.append(f"Matched word: {word}")
-
-                if regex:
-                    regex_matches = re.findall(regex, content)
-                    for match in regex_matches:
-                        matches.append(f"Regex match: {match}")
-                return matches
+            matcher_type = template_module.SCAN_TEMPLATE['matcher'].get('matcher_type')
+            matcher_words = template_module.SCAN_TEMPLATE['matcher'].get('words', [])
+            matcher_regex = template_module.SCAN_TEMPLATE['matcher'].get('regex', None)
 
             if matcher_type == 'http_header':
-                header_content = ' '.join(response_headers.values())
-                matched_words.extend(check_matches(header_content, matcher_words, matcher_regex))
-            elif matcher_type == 'http_body':
-                matched_words.extend(check_matches(response_body, matcher_words, matcher_regex))
+                # Check HTTP headers
+                headers = response.headers
+                for header_name in matcher_words:
+                    header_value = headers.get(header_name, None)
+                    if header_value is not None:
+                        logger.info(f"Found {header_name} header: {header_value}")
 
-            if matched_words:
-                detected_value = "unknown"
-                if matcher_regex:
-                    version_match = re.search(matcher_regex, header_content, re.IGNORECASE)
-                    if version_match:
-                        detected_value = version_match.group(1)
-                
-                description = template['info']['description'].format(detected_value=detected_value)
+                        if matcher_regex:
+                            match = re.search(matcher_regex, header_value, re.IGNORECASE)
+                            if match:
+                                detected_value = match.group(1)
+                                logger.info(f"Detected version: {detected_value} at {endpoint}")
 
-                logger.warning(f"WARNING - {description} for {endpoint}")
+                                description = template_module.SCAN_TEMPLATE['info']['description'].format(detected_value=detected_value)
+                                logger.warning(f"WARNING - {description} for {endpoint}")
 
-                vulnerability_details = scan_info.copy()
-                if extra_details:
-                    vulnerability_details.update(extra_details)
-                
-                vulnerability_details.update({
-                    'matched_words': matched_words,
-                    'matched_regex': matched_regex,
-                    'response_status': response.status_code,
-                    'response_headers': response_headers ,
-                    'response_preview': response_body[:1000],
-                    'description': description
-                })
-                
-                add_vulnerability(vulnerability_details, endpoint, target)
-                logger.info(f"Stopping scan for {template['info']['name']} template due to matches found")
-                return True
+                                vulnerability_details = template_module.SCAN_TEMPLATE['info'].copy()
+                                if extra_details:
+                                    vulnerability_details.update(extra_details)
 
-        except requests.RequestException as e:
-            logger.warning(f"Request error for {endpoint}: {e}")
-        
+                                vulnerability_details.update({
+                                    'matched_words': [header_name],
+                                    'matched_regex': [detected_value],
+                                    'response_headers': headers,
+                                    'description': description 
+                                })
+                                add_vulnerability(vulnerability_details, endpoint, target)
+                                return True
+                            else:
+                                logger.info(f"No version detected in {header_name} header at {endpoint}")
+                    else:
+                        logger.info(f"{header_name} header not found at {endpoint}")
+
+            if matcher_type == 'http_body':
+                response_body = response.text
+                detected_files = []
+                extensions = [re.escape(ext.lstrip('.')) for ext in matcher_words]
+                pattern = re.compile(
+                    r'\b([\w\-/]+\.(?:' + '|'.join(extensions) + r'))\b',
+                    re.IGNORECASE
+                )
+                matches = pattern.findall(response_body)
+
+                if matches:
+                    detected_files = list(set([
+                        os.path.splitext(match)[-1].lower().strip() 
+                        for match in matches 
+                        if not match.endswith(('.css', '.js'))  # Ignore non-sensitive files
+                    ]))
+
+                    if detected_files:
+                        detected_value = ', '.join(detected_files)
+                        description_template = template_module.SCAN_TEMPLATE['info']['description']
+                        formatted_description = description_template.replace("{detected_value}", detected_value)
+
+                        vulnerability_details = template_module.SCAN_TEMPLATE['info'].copy()
+                        vulnerability_details.update({
+                            'matched_words': detected_files,
+                            'description': formatted_description,
+                            'response_body_preview': response.text[:1000]
+                        })
+
+                        add_vulnerability(vulnerability_details, endpoint, target)
+                        return True
+                else:
+                    logger.info(f"No sensitive files detected in the response body at {endpoint}")
+
+            else:
+                logger.warning(f"Invalid matcher_type: {matcher_type}")
+
+        except Exception as e:
+            logger.error(f"Error during scanning template {scan_info['name']}: {e}")
+
         return False
     
     try:

@@ -88,7 +88,14 @@
                                 <td>
                                     <a href="{{ url_for('scanner.vulnerability_details', vuln_id=vuln.id) }}">{{ vuln.name }}</a>
                                 </td>
-                                <td>{{ vuln.details }}</td>
+                                <td>
+                                    {% if vuln.details %}
+                                        {{ vuln.details | safe }}
+                                    {% else %}
+                                        No details available
+                                    {% endif %}
+                                </td>
+                                
                                 <td class="severity {{ vuln.severity|lower }}">{{ vuln.severity }}</td>
                                 <td>{{ vuln.cvss_score }}</td>
                                 <td>

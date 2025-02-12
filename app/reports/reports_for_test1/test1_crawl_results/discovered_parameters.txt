@@ -1,0 +1,8 @@
+/artists.php?artist=
+/listproducts.php?artist=
+/listproducts.php?cat=
+/showimage.php?file=
+/hpp/params.php?p=
+/product.php?pic=
+/hpp/?pp=
+/hpp/params.php?pp=
