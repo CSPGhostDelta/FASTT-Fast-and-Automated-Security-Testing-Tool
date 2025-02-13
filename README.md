@@ -57,3 +57,29 @@ chmod +x install.sh && ./install.sh
 4. After that, FASTT can be accessed at **https://127.0.0.1/**.
 
 ![image](https://github.com/user-attachments/assets/59a1b309-e336-404c-abae-4006d6b825d6)
+
+# License
+FASTT is released under the **GPL v3**. See the full [LICENSE](LICENSE) file for details.
+
+# Disclaimer!
+FASTT is intended for ethical and authorized use only. It is designed to assist developers, security professionals, and website owners in identifying potential security vulnerabilities in their web applications. It should not be used for malicious purposes, including but not limited to unauthorized scanning, exploitation, or attacks on systems without explicit permission. 
+
+### User Responsibility
+- Authorization: You must ensure that you have explicit permission to scan the target website(s). Unauthorized scanning of systems is illegal and unethical.
+- Compliance: You are responsible for complying with all applicable laws, regulations, and terms of service when using FASTT.
+- Remediation: FASTT provides recommendations for addressing vulnerabilities, but it is your responsibility to implement appropriate fixes and verify their effectiveness.
+
+### **No Warranty**
+FASTT is provided "as is" without any warranties, express or implied. The developers and contributors of FASTT make no guarantees regarding:
+- The accuracy or completeness of the scan results.
+- The detection of all possible vulnerabilities.
+- The absence of false positives or false negatives.
+- The suitability of the tool for your specific use case.
+
+### **Ethical Hacking & Legal Compliance**
+By using FASTT, you agree to:  
+✅ **Use it responsibly and ethically.**  
+✅ **Comply with all applicable laws and policies.**  
+✅ **Obtain proper authorization before conducting security scans.**  
+
+FASTT is intended to improve web application security. Misuse of the tool, including but not limited to unauthorized scanning, exploitation, or disruption of services, is strictly prohibited. By using FASTT, you agree to use it in a lawful and ethical manner.
