@@ -1,7 +1,7 @@
 SCAN_TEMPLATE = {
     'info': {
         'name': 'Sensitive Data Exposure via Directory Listing Enabled',
-        'type': 'A01 - Broken Access Control',
+        'type': 'A01:2021 - Broken Access Control',
         'severity': 'Critical',
         'description': 'Found potential sensitive file with extension: {detected_value}',
         'cvss_score': '9.1',
@@ -35,6 +35,7 @@ SCAN_TEMPLATE = {
     },
     'matcher': {
         'matcher_type': 'http_body',
+        'type': 'extension',
         'words': [
             '.bak', '.sql', '.log', '.php'
         ]

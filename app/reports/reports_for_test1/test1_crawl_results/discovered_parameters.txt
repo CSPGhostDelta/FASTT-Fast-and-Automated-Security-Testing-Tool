@@ -1,8 +1,15 @@
+/?artist=
 /artists.php?artist=
 /listproducts.php?artist=
+/?cat=
 /listproducts.php?cat=
+/?file=
 /showimage.php?file=
+/hpp/?p=
 /hpp/params.php?p=
+/?pic=
 /product.php?pic=
 /hpp/?pp=
 /hpp/params.php?pp=
+/?test=
+/search.php?test=

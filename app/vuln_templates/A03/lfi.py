@@ -1,7 +1,7 @@
 SCAN_TEMPLATE = {
     'info': {
         'name': 'Local File Inclusion (LFI)',
-        'type': 'A05 - Security Misconfiguration',
+        'type': 'A03:2021 - Injection',
         'severity': 'Critical',
         'description': (
             'Local File Inclusion (LFI) vulnerabilities occur when an application improperly processes user-supplied input '

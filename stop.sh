@@ -1,15 +1,8 @@
 #!/bin/bash
 
-# Navigate to the directory containing the docker-compose.yml file
 cd "$(dirname "$0")"
 
-# Stop all FastT containers
-echo "Stopping FASTT containers..."
-docker-compose stop
+echo "Stopping all FASTT containers..."
+docker-compose down
 
-# Check if the command was successful
-if [ $? -eq 0 ]; then
-    echo "All FastT containers have been stopped."
-else
-    echo "Failed to stop FastT containers."
-fi
+echo "✅ All FASTT containers have been stopped."

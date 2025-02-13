@@ -5,49 +5,52 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
+    image: fastt-app
     container_name: FASTTAPP
     restart: always
     networks:
       - fasttnetwork
     environment:
-      - SQLALCHEMY_DATABASE_URI=mysql+pymysql://fasttdatabase:fasttdb@fasttdb/fasttdb
+      - SQLALCHEMY_DATABASE_URI=mysql+pymysql://fasttdatabase:fasttdb@fastt-mysql/fasttdb
       - SQLALCHEMY_TRACK_MODIFICATIONS=False
       - SECRET_KEY=mysecretkey
-      - CELERY_BROKER_URL=redis://fasttredis:6379/0
-      - CELERY_RESULT_BACKEND=redis://fasttredis:6379/0
+      - CELERY_BROKER_URL=redis://fastt-redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://fastt-redis:6379/0
       - FLASK_ENV=production
     volumes:
       - .:/usr/src/app
-      - ./reports:/usr/src/app/reports
     command: web 
     expose:
       - "5000"
     depends_on:
-      - fasttdb
-      - fasttredis
+      - fastt-mysql
+      - fastt-redis
 
   celery_worker:
     build: 
       context: .
       dockerfile: Dockerfile
+    image: fastt-celery
     container_name: FASTTCELERY
     restart: always
     networks:
       - fasttnetwork
     environment:
-      - CELERY_BROKER_URL=redis://fasttredis:6379/0
-      - CELERY_RESULT_BACKEND=redis://fasttredis:6379/0
+      - CELERY_BROKER_URL=redis://fastt-redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://fastt-redis:6379/0
       - FLASK_ENV=production
     volumes:
       - .:/usr/src/app
-      - ./reports:/usr/src/app/reports
     command: celery worker 
     depends_on:
       - fastt
-      - fasttredis
+      - fastt-redis
 
-  fasttserver:
-    image: nginx:latest
+  fastt-nginx:
+    build: 
+      context: .
+      dockerfile: config/nginx.dockerfile
+    image: fastt-nginx
     container_name: FASTTSERVER
     restart: always
     networks:
@@ -62,8 +65,11 @@ services:
     depends_on:
       - fastt 
 
-  fasttdb:
-    image: mysql:latest
+  fastt-mysql:
+    build: 
+      context: .
+      dockerfile: config/mysql.dockerfile
+    image: fastt-mysql 
     container_name: FASTTDB
     restart: always
     networks:
@@ -77,10 +83,12 @@ services:
       - "3306:3306" 
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./mysql-init:/docker-entrypoint-initdb.d
 
-  fasttredis:
-    image: redis:latest
+  fastt-redis:
+    build: 
+      context: .
+      dockerfile: config/redis.dockerfile
+    image: fastt-redis
     container_name: FASTTREDIS
     restart: always 
     networks:

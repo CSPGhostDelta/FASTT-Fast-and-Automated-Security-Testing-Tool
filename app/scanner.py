@@ -12,7 +12,7 @@ from datetime import datetime
 from requests.adapters import HTTPAdapter
 from urllib3.util import Retry
 from urllib.parse import urljoin, urlparse
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Comment
 
 scanner_app = Blueprint('scanner', __name__)
 
@@ -140,7 +140,9 @@ def add_vulnerability(scan_info, endpoint, target):
             endpoint=endpoint,
             scan_name=target.name,
             full_description=scan_info.get('full_description', 'N/A'),
-            remediation=scan_info.get('remediation', 'N/A')
+            remediation=scan_info.get('remediation', 'N/A'),
+            cwe_code=scan_info.get('cwe_code', 'N/A'),
+            cve_code=scan_info.get('cve_code', 'N/A') 
         )
         db.session.add(vulnerability)
         db.session.commit()
@@ -150,8 +152,6 @@ def add_vulnerability(scan_info, endpoint, target):
         logger.error(f"Error adding vulnerability: {e}")
         db.session.rollback()
         return None
-
-
 
 def requests_retry_session(
     retries=3,
@@ -171,7 +171,7 @@ def requests_retry_session(
     session.mount('https://', adapter)
     return session
 
-def crawl_website(domain, target_name, report_dir, depth=3, max_urls=100):
+def crawl_website(domain, target_name, report_dir, depth=5, max_urls=500):
     visited = set()
     to_crawl = [(domain, 0)]
     discovered_resources = {
@@ -189,6 +189,63 @@ def crawl_website(domain, target_name, report_dir, depth=3, max_urls=100):
     parameter_details_file = os.path.join(target_crawl_dir, "parameter_details.txt")
 
     session = requests_retry_session()
+
+    def extract_links_from_javascript(soup):
+        links = set()
+        for script in soup.find_all('script'):
+            if script.string:
+                patterns = [
+                    r'["\'](/[^"\']*)["\']', 
+                    r'href\s*=\s*["\'](/[^"\']*)["\']',
+                    r'url\s*:\s*["\'](/[^"\']*)["\']',
+                    r'path\s*:\s*["\'](/[^"\']*)["\']',
+                ]
+                for pattern in patterns:
+                    matches = re.findall(pattern, script.string)
+                    links.update(matches)
+        return links
+
+    def extract_links_from_comments(soup):
+        links = set()
+        comments = soup.find_all(string=lambda text: isinstance(text, Comment))
+        for comment in comments:
+            urls = re.findall(r'(/[^\s"\'<>]*)', comment)
+            links.update(urls)
+        return links
+
+    def parse_robots_txt(domain):
+        paths = set()
+        try:
+            response = session.get(f"{domain}/robots.txt", timeout=10)
+            if response.status_code == 200:
+                lines = response.text.split('\n')
+                for line in lines:
+                    if line.lower().startswith(('allow:', 'disallow:')):
+                        path = line.split(':', 1)[1].strip()
+                        if path and path != '/':
+                            paths.add(path)
+        except Exception as e:
+            logger.error(f"Error parsing robots.txt: {e}")
+        return paths
+
+    def extract_from_js(soup):
+        params = set()
+        for script in soup.find_all('script'):
+            if script.string:
+                patterns = [
+                    r'[\?&]([a-zA-Z_][a-zA-Z0-9_]*)=',
+                    r'params\[["\']([^"\']+)[\'"]\]',
+                    r'parameters\[["\']([^"\']+)[\'"]\]',
+                    r'data\[["\']([^"\']+)[\'"]\]',
+                ]
+                for pattern in patterns:
+                    matches = re.findall(pattern, script.string)
+                    params.update(matches)
+        return params
+
+    robot_paths = parse_robots_txt(domain)
+    for path in robot_paths:
+        to_crawl.append((urljoin(domain, path), 0))
     
     while to_crawl and len(discovered_resources['urls']) < max_urls:
         current_url, current_depth = to_crawl.pop(0)
@@ -206,20 +263,33 @@ def crawl_website(domain, target_name, report_dir, depth=3, max_urls=100):
             
             parsed_url = urlparse(current_url)
             path = parsed_url.path
-            if path and path != '/':
-                discovered_resources['paths'].add(path)
             
+            if path:
+                path = path.rstrip('/')
+                path_parts = path.split('/')
+                current_path = ''
+                for part in path_parts:
+                    if part:
+                        current_path += '/' + part
+                        if '.' not in part: 
+                            discovered_resources['paths'].add(current_path + '/')
+
             if parsed_url.query:
                 params = parsed_url.query.split('&')
                 for param in params:
                     param_parts = param.split('=')
                     param_name = param_parts[0]
                     param_value = param_parts[1] if len(param_parts) > 1 else ''
-                    parameter_path = f"{parsed_url.path}?{param_name}="
+                    
+                    base_dir = '/'.join(parsed_url.path.split('/')[:-1]) + '/'
+                    parameter_paths = [
+                        f"{parsed_url.path}?{param_name}=",
+                        f"{base_dir}?{param_name}="
+                    ]
                     
                     if param_name not in discovered_resources['parameters']:
                         discovered_resources['parameters'][param_name] = set()
-                    discovered_resources['parameters'][param_name].add(parameter_path)
+                    discovered_resources['parameters'][param_name].update(parameter_paths)
                     
                     if param_name not in discovered_resources['parameter_details']:
                         discovered_resources['parameter_details'][param_name] = {
@@ -232,8 +302,24 @@ def crawl_website(domain, target_name, report_dir, depth=3, max_urls=100):
                     discovered_resources['parameter_details'][param_name]['values'].add(param_value)
                     discovered_resources['parameter_details'][param_name]['source_urls'].append(current_url)
 
-            for link in soup.find_all('a', href=True):
-                absolute_url = urljoin(current_url, link['href'])
+            js_params = extract_from_js(soup)
+            for param_name in js_params:
+                if param_name not in discovered_resources['parameters']:
+                    discovered_resources['parameters'][param_name] = set()
+                    discovered_resources['parameter_details'][param_name] = {
+                        'sources': set(),
+                        'values': set(),
+                        'source_urls': []
+                    }
+
+            new_links = set()
+            new_links.update(link['href'] for link in soup.find_all('a', href=True))
+            new_links.update(form['action'] for form in soup.find_all('form', action=True))
+            new_links.update(extract_links_from_javascript(soup))
+            new_links.update(extract_links_from_comments(soup))
+            
+            for link in new_links:
+                absolute_url = urljoin(current_url, link)
                 parsed_absolute_url = urlparse(absolute_url)
                 
                 if parsed_absolute_url.netloc == urlparse(domain).netloc:
@@ -242,39 +328,33 @@ def crawl_website(domain, target_name, report_dir, depth=3, max_urls=100):
         except Exception as e:
             logger.error(f"Crawl error for {current_url}: {e}")
     
-    # Write URLs
     with open(urls_file, 'w') as f:
-        for path in sorted(discovered_resources['paths']):
+        sorted_paths = sorted(discovered_resources['paths'])
+        for path in sorted_paths:
             if not path.startswith('/'):
-                path = f'/{path}'
+                path = '/' + path
             f.write(f"{path}\n")
     
-    # Write Parameters
     with open(parameters_file, 'w') as f:
         for param in sorted(discovered_resources['parameters']):
             for path in sorted(discovered_resources['parameters'][param]):
                 f.write(f"{path}\n")
     
-    # Write Parameter Details
     with open(parameter_details_file, 'w') as f:
         for param in sorted(discovered_resources['parameter_details']):
             details = discovered_resources['parameter_details'][param]
             
             f.write(f"Parameter: {param}\n")
             f.write(f"Sources: {len(details['sources'])} URLs\n")
-            
-            sorted_values = sorted(details['values'], key=str)
-            f.write(f"Unique Values: {set(sorted_values)}\n")
+            f.write(f"Unique Values: {set(sorted(details['values'], key=str))}\n")
             f.write(f"Total Occurrences: {len(details['source_urls'])}\n")
-            
-            sorted_urls = sorted(details['source_urls'])
-            
-            f.write("Source URLs: \n")
-            for url in sorted_urls:
-                f.write(f"{url}, \n")
+            f.write("Source URLs:\n")
+            for url in sorted(details['source_urls']):
+                f.write(f"{url}\n")
             f.write("\n")
     
     logger.info(f"Discovered {len(discovered_resources['parameters'])} unique parameters")
+    logger.info(f"Discovered {len(discovered_resources['paths'])} unique directories")
     
     return list(discovered_resources['urls']), {
         'urls': urls_file,
@@ -309,7 +389,7 @@ def perform_scan(domain, template_module, target, total_templates, current_templ
     matcher_type = matcher.get('matcher_type', '')
     matcher_words = matcher.get('words', [])
     matcher_regex = matcher.get('regex', None)
-    max_scan = template_module.SCAN_TEMPLATE.get('max_scan', 5)
+    max_scan = template_module.SCAN_TEMPLATE.get('max_scan', 1)
 
     payloads = []
     if payload_info['payload_type'] == 'wordlist':
@@ -383,40 +463,66 @@ def perform_scan(domain, template_module, target, total_templates, current_templ
                     else:
                         logger.info(f"{header_name} header not found at {endpoint}")
 
-            if matcher_type == 'http_body':
-                response_body = response.text
-                detected_files = []
-                extensions = [re.escape(ext.lstrip('.')) for ext in matcher_words]
-                pattern = re.compile(
-                    r'\b([\w\-/]+\.(?:' + '|'.join(extensions) + r'))\b',
-                    re.IGNORECASE
-                )
-                matches = pattern.findall(response_body)
+            elif matcher_type == 'http_body':
+                matched_words = [] 
+                match_type = matcher.get('type', 'string')
 
-                if matches:
-                    detected_files = list(set([
-                        os.path.splitext(match)[-1].lower().strip() 
-                        for match in matches 
-                        if not match.endswith(('.css', '.js'))  # Ignore non-sensitive files
-                    ]))
+                if match_type == 'string':
+                    response_text = response.text.lower()
+                    matched_words = [
+                        phrase for phrase in matcher_words 
+                        if phrase.lower() in response_text 
+                    ]
 
-                    if detected_files:
-                        detected_value = ', '.join(detected_files)
-                        description_template = template_module.SCAN_TEMPLATE['info']['description']
-                        formatted_description = description_template.replace("{detected_value}", detected_value)
+                if matched_words:
+                    logger.warning(f"WARNING - Potential vulnerability found at {endpoint}")
+                    
+                    vulnerability_details = scan_info.copy()
+                    if extra_details:
+                        vulnerability_details.update(extra_details)
+                    
+                    vulnerability_details.update({
+                        'matched_words': matched_words,
+                        'response_status': response.status_code,
+                        'matcher_type': matcher_type,
+                        'match_type': 'string',
+                        'endpoint': endpoint,
+                        'response_preview': response.text[:1000]
+                    })
+                    
+                    add_vulnerability(vulnerability_details, endpoint, target)
+                    return True
+                elif match_type == 'extension':
+                    response_body = response.text
+                    detected_files = []
+                    extensions = [re.escape(ext.lstrip('.')) for ext in matcher_words]
+                    pattern = re.compile(
+                        r'\b([\w\-/]+\.(?:' + '|'.join(extensions) + r'))\b',
+                        re.IGNORECASE
+                    )
+                    matches = pattern.findall(response_body)
 
-                        vulnerability_details = template_module.SCAN_TEMPLATE['info'].copy()
-                        vulnerability_details.update({
-                            'matched_words': detected_files,
-                            'description': formatted_description,
-                            'response_body_preview': response.text[:1000]
-                        })
+                    if matches:
+                        detected_files = list(set([
+                            os.path.splitext(match)[-1].lower().strip() 
+                            for match in matches 
+                            if not match.endswith(('.css', '.js'))  # Ignore non-sensitive files
+                        ]))
 
-                        add_vulnerability(vulnerability_details, endpoint, target)
-                        return True
-                else:
-                    logger.info(f"No sensitive files detected in the response body at {endpoint}")
+                        if detected_files:
+                            detected_value = ', '.join(detected_files)
+                            description_template = template_module.SCAN_TEMPLATE['info']['description']
+                            formatted_description = description_template.replace("{detected_value}", detected_value)
 
+                            vulnerability_details = template_module.SCAN_TEMPLATE['info'].copy()
+                            vulnerability_details.update({
+                                'matched_words': detected_files,
+                                'description': formatted_description,
+                                'response_body_preview': response.text[:1000]
+                            })
+
+                            add_vulnerability(vulnerability_details, endpoint, target)
+                            return True
             else:
                 logger.warning(f"Invalid matcher_type: {matcher_type}")
 
@@ -431,15 +537,18 @@ def perform_scan(domain, template_module, target, total_templates, current_templ
             
             def scan_paths(paths_to_scan):
                 nonlocal vulnerabilities_found
-                
                 template_vulnerability_count = 0
                 
-                for path in paths_to_scan:
+                for base_path in paths_to_scan:
                     if template_vulnerability_count >= max_scan:
                         logger.info(f"Reached maximum vulnerabilities ({max_scan}) for {scan_info['name']}")
                         break
 
-                    base_endpoint = path.rstrip('/')
+                    base_path = base_path.replace(domain, '').strip()
+                    if not base_path.startswith('/'):
+                        base_path = '/' + base_path
+                    
+                    base_endpoint = domain.rstrip('/') + base_path.rstrip('/')
                     logger.info(f"Checking base path: {base_endpoint}")
                     
                     if not payloads:
@@ -488,7 +597,13 @@ def perform_scan(domain, template_module, target, total_templates, current_templ
 
                 return template_vulnerability_count
 
-            if path_method in ['single', 'multiple', 'crawled']:
+            if path_method == 'deep':
+                valid_paths = [
+                    url for url in discovered_urls 
+                    if not re.search(r'\.[a-zA-Z0-9]{2,4}$', url)
+                ]
+                scan_paths(valid_paths)
+            else:
                 scan_paths(paths)
 
         elif method == 'parameter':
@@ -550,7 +665,7 @@ def perform_scan(domain, template_module, target, total_templates, current_templ
     logger.info(f"Scanning completed for {scan_info['name']}! Time elapsed: {elapsed_time:.2f} seconds")
 
     return vulnerabilities_found
-        
+
 @celery.task(name='perform_scan')
 def perform_scan_task(target_id):
     from app.init import create_app

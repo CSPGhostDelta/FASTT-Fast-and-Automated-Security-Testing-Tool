@@ -1,0 +1,8 @@
+Scan Summary for test2
+==================================================
+Target Domain: https://ginandjuice.shop/
+Scan Start Time: 2025-02-13 16:01:21
+Scan End Time: 2025-02-13 16:03:14
+Total Vulnerabilities Found: 0
+
+Vulnerability Details:

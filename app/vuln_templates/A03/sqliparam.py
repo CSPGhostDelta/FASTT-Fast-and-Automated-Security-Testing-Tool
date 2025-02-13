@@ -1,7 +1,7 @@
 SCAN_TEMPLATE = {
     'info': {
         'name': 'SQL Injection',
-        'type': 'A03 - Injection',
+        'type': 'A03:2021 - Injection',
         'severity': 'Critical',
         'description': (
             'SQL Injection occurs when an attacker manipulates an application’s SQL queries through unsanitized user input. '
@@ -32,6 +32,7 @@ SCAN_TEMPLATE = {
         'payload': ['sqlinjection.txt']
     },
     'matcher': {
+        'matcher_type': 'http_body',
         'words': [
             'SQL syntax error',
             'MySQL',

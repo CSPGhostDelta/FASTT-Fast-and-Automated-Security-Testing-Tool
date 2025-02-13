@@ -1,0 +1,36 @@
+Parameter: postId
+Sources: 6 URLs
+Unique Values: {'2', '1', '3', '6', '4', '5'}
+Total Occurrences: 6
+Source URLs: 
+https://ginandjuice.shop/blog/post?postId=1, 
+https://ginandjuice.shop/blog/post?postId=2, 
+https://ginandjuice.shop/blog/post?postId=3, 
+https://ginandjuice.shop/blog/post?postId=4, 
+https://ginandjuice.shop/blog/post?postId=5, 
+https://ginandjuice.shop/blog/post?postId=6, 
+
+Parameter: productId
+Sources: 18 URLs
+Unique Values: {'14', '9', '7', '5', '15', '2', '1', '3', '6', '18', '13', '16', '4', '10', '17', '11', '12', '8'}
+Total Occurrences: 18
+Source URLs: 
+https://ginandjuice.shop/catalog/product?productId=1, 
+https://ginandjuice.shop/catalog/product?productId=10, 
+https://ginandjuice.shop/catalog/product?productId=11, 
+https://ginandjuice.shop/catalog/product?productId=12, 
+https://ginandjuice.shop/catalog/product?productId=13, 
+https://ginandjuice.shop/catalog/product?productId=14, 
+https://ginandjuice.shop/catalog/product?productId=15, 
+https://ginandjuice.shop/catalog/product?productId=16, 
+https://ginandjuice.shop/catalog/product?productId=17, 
+https://ginandjuice.shop/catalog/product?productId=18, 
+https://ginandjuice.shop/catalog/product?productId=2, 
+https://ginandjuice.shop/catalog/product?productId=3, 
+https://ginandjuice.shop/catalog/product?productId=4, 
+https://ginandjuice.shop/catalog/product?productId=5, 
+https://ginandjuice.shop/catalog/product?productId=6, 
+https://ginandjuice.shop/catalog/product?productId=7, 
+https://ginandjuice.shop/catalog/product?productId=8, 
+https://ginandjuice.shop/catalog/product?productId=9, 
+
