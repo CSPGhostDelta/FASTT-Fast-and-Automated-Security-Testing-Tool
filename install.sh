@@ -18,7 +18,7 @@ echo "Building and starting FASTT containers..."
 docker-compose up -d --build
 
 echo "Waiting for containers to start..."
-sleep 10
+sleep 5
 
 SERVER_CONTAINER="FASTTSERVER"
 IP_ADDRESS=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $SERVER_CONTAINER 2>/dev/null)
