@@ -7,9 +7,9 @@
 
 
 ## 📖 Table of Contents
-- [📌 FASTT - Fast and Automated Security Testing Tool](#-fastt---fast-and-automated-security-testing-tool)
-- [🚀 Features](#-features)
-- [🔍 How FASTT Works](#-how-fastt-works)
+- [FASTT - Fast and Automated Security Testing Tool](#-fastt---fast-and-automated-security-testing-tool)
+- [Features](#features)
+- [🔍 How FASTT Works](#how-fastt-works)
   - [1️⃣ User specifies a target website URL to scan](#1️⃣-user-specifies-a-target-website-url-to-scan)
   - [2️⃣ The scanner crawls & tests parameters for vulnerabilities](#2️⃣-the-scanner-crawls--tests-parameters-for-vulnerabilities)
   - [3️⃣ Detected issues are ranked based on CVSS v4.0 severity levels](#3️⃣-detected-issues-are-ranked-based-on-cvss-v40-severity-levels)
