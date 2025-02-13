@@ -5,22 +5,13 @@
 
 **FASTT (Fast and Automated Security Testing Tool)** is a web-based vulnerability scanner designed to perform comprehensive security assessments on websites. FASTT aims to identify and evaluate security vulnerabilities by leveraging the OWASP Top 10 2021 security risks and the Common Vulnerability Scoring System (CVSS) v4.0 to assess the severity of detected vulnerabilities. FASTT is built using Python with the Flask framework, providing a robust and scalable architecture. It employs a template-based approach using customizable .py files, allowing users to easily update and extend scan templates to detect new emerging threats.
 
-
-## 📖 Table of Contents
-- [FASTT - Fast and Automated Security Testing Tool](#-fastt---fast-and-automated-security-testing-tool)
-- [Features](#features)
+## Table of Contents
+- [📌 FASTT - Fast and Automated Security Testing Tool](#fastt---fast-and-automated-security-testing-tool)
+- [🚀 Features](#features)
 - [🔍 How FASTT Works](#how-fastt-works)
-  - [1️⃣ User specifies a target website URL to scan](#1️⃣-user-specifies-a-target-website-url-to-scan)
-  - [2️⃣ The scanner crawls & tests parameters for vulnerabilities](#2️⃣-the-scanner-crawls--tests-parameters-for-vulnerabilities)
-  - [3️⃣ Detected issues are ranked based on CVSS v4.0 severity levels](#3️⃣-detected-issues-are-ranked-based-on-cvss-v40-severity-levels)
-  - [4️⃣ Security reports can be accessed via the report dashboard](#4️⃣-security-reports-can-be-accessed-via-the-report-dashboard)
-- [⚙️ Installation](#️-installation)
-- [📜 License](#-license)
-- [⚠️ Disclaimer](#️-disclaimer)
-  - [🔹 User Responsibility](#-user-responsibility)
-  - [🔹 No Warranty](#-no-warranty)
-  - [🔹 Ethical Hacking & Legal Compliance](#-ethical-hacking--legal-compliance)
-
+- [⚙️ Installation](#installation)
+- [📜 License](#license)
+- [⚠️ Disclaimer](#disclaimer)
 
 # Features
 
