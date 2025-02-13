@@ -83,3 +83,7 @@ By using FASTT, you agree to:
 ✅ **Obtain proper authorization before conducting security scans.**  
 
 FASTT is intended to improve web application security. Misuse of the tool, including but not limited to unauthorized scanning, exploitation, or disruption of services, is strictly prohibited. By using FASTT, you agree to use it in a lawful and ethical manner.
+
+By using FASTT, you acknowledge that you have read, understood, and agreed to this disclaimer. If you do not agree with these terms, you must discontinue the use of FASTT immediately.
+
+**Thank you for using FASTT responsibly!**
