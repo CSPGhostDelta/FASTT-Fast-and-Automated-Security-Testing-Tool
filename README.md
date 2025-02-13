@@ -5,6 +5,9 @@
 
 **FASTT (Fast and Automated Security Testing Tool)** is a web-based vulnerability scanner designed to perform comprehensive security assessments on websites. FASTT aims to identify and evaluate security vulnerabilities by leveraging the OWASP Top 10 2021 security risks and the Common Vulnerability Scoring System (CVSS) v4.0 to assess the severity of detected vulnerabilities. FASTT is built using Python with the Flask framework, providing a robust and scalable architecture. It employs a template-based approach using customizable .py files, allowing users to easily update and extend scan templates to detect new emerging threats.
 
+# Features
+
+
 # How FASTT Works
 ### 1. User specify a target website URL to scan.
 The scanning process begins when the user provides a website URL as the target for the security assessment. This can be done through the **Scan Targets** page by clicking the **Add Target** button.
@@ -38,3 +41,19 @@ FASTT provides a user-friendly dashboard where users can access detailed securit
 
 ![targetdetailsfoundvuln](https://github.com/user-attachments/assets/7bfb2c11-72c7-46ec-8574-5639ceb5d266)
 
+# Installation
+1. Clone the repository and access the directory.
+```
+git clone https://github.com/CSPGhostDelta/FASTT-Fast-and-Automated-Security-Testing-Tool.git && cd FASTT-Fast-and-Automated-Security-Testing-Tool/
+```
+2. Run the **install.sh** script
+```
+chmod +x install.sh && ./install.sh
+```
+3. Wait until the installation process finished.
+
+![image](https://github.com/user-attachments/assets/1d740419-9a9e-4821-bff9-aa7b3fdd8cc8)
+
+4. After that, FASTT can be accessed at **https://127.0.0.1/**.
+
+![image](https://github.com/user-attachments/assets/59a1b309-e336-404c-abae-4006d6b825d6)
