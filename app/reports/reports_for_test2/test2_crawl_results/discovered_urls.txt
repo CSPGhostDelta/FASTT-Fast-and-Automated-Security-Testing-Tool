@@ -1,8 +1,0 @@
-/
-/about
-/blog
-/blog/post
-/catalog
-/catalog/cart
-/catalog/product
-/my-account

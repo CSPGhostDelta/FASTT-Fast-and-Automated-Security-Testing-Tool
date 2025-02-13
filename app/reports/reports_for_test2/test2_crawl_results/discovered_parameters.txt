@@ -1,2 +1,0 @@
-/blog/post?postId=
-/catalog/product?productId=
