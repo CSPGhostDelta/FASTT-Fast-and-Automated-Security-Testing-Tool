@@ -1,0 +1,32 @@
+SCAN_TEMPLATE = {
+    'info': {
+        'name': 
+        'type': 
+        'severity': 
+        'description': 
+        'cvss_score': 
+        'cvss_metrics': 
+        'cwe_code': 
+        'cve_code': 
+        'full_description': 
+        'remediation': 
+    },
+    
+'entry_point': {
+        'entry_point_method': 
+        'path_method':  
+        'paths': [
+            '{domain}',
+        ],
+    },
+    'payloads': {
+        'payload_type': 
+        'payload': 
+    },
+    'matcher': {
+        'matcher_type': 
+        'type': 
+        'words': 
+    },
+    'max_scan':
+}
